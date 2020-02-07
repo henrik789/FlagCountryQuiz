@@ -8,20 +8,30 @@
 
 /* Begin PBXBuildFile section */
 		AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E1F223EDB794006E0104 /* AppDelegate.swift */; };
-		AF14E1F523EDB794006E0104 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E1F423EDB794006E0104 /* ViewController.swift */; };
 		AF14E1F823EDB794006E0104 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1F623EDB794006E0104 /* Main.storyboard */; };
 		AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1F923EDB795006E0104 /* Assets.xcassets */; };
 		AF14E1FD23EDB795006E0104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1FB23EDB795006E0104 /* LaunchScreen.storyboard */; };
+		AF14E20723EDB854006E0104 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E20523EDB854006E0104 /* MainViewController.swift */; };
+		AF14E20823EDB854006E0104 /* MainViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF14E20623EDB854006E0104 /* MainViewController.xib */; };
+		AF14E21023EDBAA5006E0104 /* SwiftyJSON.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E20F23EDBAA5006E0104 /* SwiftyJSON.swift */; };
+		AF14E21223EDBAC7006E0104 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21123EDBAC7006E0104 /* Country.swift */; };
+		AF14E21523EDBAFB006E0104 /* countriesDict.json in Resources */ = {isa = PBXBuildFile; fileRef = AF14E21423EDBAFB006E0104 /* countriesDict.json */; };
+		AF14E21723EDBB36006E0104 /* Countries in Resources */ = {isa = PBXBuildFile; fileRef = AF14E21623EDBB36006E0104 /* Countries */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AF14E1EF23EDB794006E0104 /* FlagCountryQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagCountryQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF14E1F223EDB794006E0104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		AF14E1F423EDB794006E0104 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AF14E1F723EDB794006E0104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AF14E1F923EDB795006E0104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AF14E1FC23EDB795006E0104 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AF14E1FE23EDB795006E0104 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AF14E20523EDB854006E0104 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		AF14E20623EDB854006E0104 /* MainViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainViewController.xib; sourceTree = "<group>"; };
+		AF14E20F23EDBAA5006E0104 /* SwiftyJSON.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftyJSON.swift; sourceTree = "<group>"; };
+		AF14E21123EDBAC7006E0104 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
+		AF14E21423EDBAFB006E0104 /* countriesDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countriesDict.json; sourceTree = "<group>"; };
+		AF14E21623EDBB36006E0104 /* Countries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Countries; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,13 +65,74 @@
 			isa = PBXGroup;
 			children = (
 				AF14E1F223EDB794006E0104 /* AppDelegate.swift */,
-				AF14E1F423EDB794006E0104 /* ViewController.swift */,
+				AF14E20E23EDBA42006E0104 /* Data */,
+				AF14E20D23EDBA32006E0104 /* Helpers */,
+				AF14E20423EDB842006E0104 /* Screens */,
 				AF14E1F623EDB794006E0104 /* Main.storyboard */,
+				AF14E21623EDBB36006E0104 /* Countries */,
 				AF14E1F923EDB795006E0104 /* Assets.xcassets */,
 				AF14E1FB23EDB795006E0104 /* LaunchScreen.storyboard */,
 				AF14E1FE23EDB795006E0104 /* Info.plist */,
 			);
 			path = FlagCountryQuiz;
+			sourceTree = "<group>";
+		};
+		AF14E20423EDB842006E0104 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+				AF14E20C23EDB978006E0104 /* Menu */,
+				AF14E20B23EDB95F006E0104 /* CountryList */,
+				AF14E20A23EDB950006E0104 /* FlagQuiz */,
+				AF14E20923EDB946006E0104 /* Main */,
+			);
+			path = Screens;
+			sourceTree = "<group>";
+		};
+		AF14E20923EDB946006E0104 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				AF14E20523EDB854006E0104 /* MainViewController.swift */,
+				AF14E20623EDB854006E0104 /* MainViewController.xib */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		AF14E20A23EDB950006E0104 /* FlagQuiz */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = FlagQuiz;
+			sourceTree = "<group>";
+		};
+		AF14E20B23EDB95F006E0104 /* CountryList */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = CountryList;
+			sourceTree = "<group>";
+		};
+		AF14E20C23EDB978006E0104 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Menu;
+			sourceTree = "<group>";
+		};
+		AF14E20D23EDBA32006E0104 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		AF14E20E23EDBA42006E0104 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				AF14E20F23EDBAA5006E0104 /* SwiftyJSON.swift */,
+				AF14E21123EDBAC7006E0104 /* Country.swift */,
+				AF14E21423EDBAFB006E0104 /* countriesDict.json */,
+			);
+			path = Data;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -123,8 +194,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF14E1FD23EDB795006E0104 /* LaunchScreen.storyboard in Resources */,
+				AF14E21723EDBB36006E0104 /* Countries in Resources */,
+				AF14E21523EDBAFB006E0104 /* countriesDict.json in Resources */,
 				AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */,
 				AF14E1F823EDB794006E0104 /* Main.storyboard in Resources */,
+				AF14E20823EDB854006E0104 /* MainViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +209,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AF14E1F523EDB794006E0104 /* ViewController.swift in Sources */,
+				AF14E20723EDB854006E0104 /* MainViewController.swift in Sources */,
 				AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */,
+				AF14E21223EDBAC7006E0104 /* Country.swift in Sources */,
+				AF14E21023EDBAA5006E0104 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +361,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT2ZWB24ZA;
 				INFOPLIST_FILE = FlagCountryQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -292,7 +369,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "se.henriklarsson-.FlagCountryQuiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -303,6 +380,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = LT2ZWB24ZA;
 				INFOPLIST_FILE = FlagCountryQuiz/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -310,7 +388,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "se.henriklarsson-.FlagCountryQuiz";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
