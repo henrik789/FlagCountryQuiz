@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryListViewController" customModule="FlagCountryQuiz" customModuleProvider="target">
+            <connections>
+                <outlet property="countryCV" destination="wrr-g8-rhA" id="3AP-fa-S8Z"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-g8-rhA">
+                    <rect key="frame" x="0.0" y="40" width="896" height="313"/>
+                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="10" id="wQC-F4-SlL">
+                        <size key="itemSize" width="400" height="200"/>
+                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                    </collectionViewFlowLayout>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="xcB-hG-SEv"/>
+                        <outlet property="delegate" destination="-1" id="0fX-2A-jPr"/>
+                    </connections>
+                </collectionView>
+                <searchBar contentMode="redraw" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="C6v-2d-H0J">
+                    <rect key="frame" x="0.0" y="-4" width="896" height="44"/>
+                    <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                    <textInputTraits key="textInputTraits"/>
+                </searchBar>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="wrr-g8-rhA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="Fho-hc-ePv"/>
+                <constraint firstItem="wrr-g8-rhA" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="IvI-Fy-fP2"/>
+                <constraint firstItem="wrr-g8-rhA" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="40" id="WjP-sZ-Tdy"/>
+                <constraint firstItem="wrr-g8-rhA" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="qDb-Eu-kQ0"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="wrr-g8-rhA" secondAttribute="bottom" constant="40" id="uxr-o5-vbi"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
+            <point key="canvasLocation" x="140.625" y="153.62318840579712"/>
+        </view>
+    </objects>
+</document>

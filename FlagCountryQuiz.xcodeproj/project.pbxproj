@@ -22,6 +22,10 @@
 		AF14E21D23F17440006E0104 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21C23F17440006E0104 /* UIColor.swift */; };
 		AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21E23F299C6006E0104 /* GetFlags.swift */; };
 		AF14E22123F29D78006E0104 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E22023F29D78006E0104 /* UIButton.swift */; };
+		AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */; };
+		AF8DA2B523F30877007DCB09 /* CountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8DA2B323F30877007DCB09 /* CountryListViewController.xib */; };
+		AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA2B623F30BB2007DCB09 /* CountryListCell.swift */; };
+		AF8DA2B923F30BB2007DCB09 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +46,10 @@
 		AF14E21C23F17440006E0104 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		AF14E21E23F299C6006E0104 /* GetFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFlags.swift; sourceTree = "<group>"; };
 		AF14E22023F29D78006E0104 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
+		AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
+		AF8DA2B323F30877007DCB09 /* CountryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListViewController.xib; sourceTree = "<group>"; };
+		AF8DA2B623F30BB2007DCB09 /* CountryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
+		AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +66,7 @@
 		AF14E1E623EDB794006E0104 = {
 			isa = PBXGroup;
 			children = (
+				AF14E22023F29D78006E0104 /* UIButton.swift */,
 				AF14E1F123EDB794006E0104 /* FlagCountryQuiz */,
 				AF14E1F023EDB794006E0104 /* Products */,
 			);
@@ -119,6 +128,10 @@
 		AF14E20B23EDB95F006E0104 /* CountryList */ = {
 			isa = PBXGroup;
 			children = (
+				AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */,
+				AF8DA2B323F30877007DCB09 /* CountryListViewController.xib */,
+				AF8DA2B623F30BB2007DCB09 /* CountryListCell.swift */,
+				AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */,
 			);
 			path = CountryList;
 			sourceTree = "<group>";
@@ -134,7 +147,6 @@
 			isa = PBXGroup;
 			children = (
 				AF14E21C23F17440006E0104 /* UIColor.swift */,
-				AF14E22023F29D78006E0104 /* UIButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -209,10 +221,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF14E1FD23EDB795006E0104 /* LaunchScreen.storyboard in Resources */,
+				AF8DA2B923F30BB2007DCB09 /* CountryListCell.xib in Resources */,
 				AF14E21723EDBB36006E0104 /* Countries in Resources */,
 				AF14E21523EDBAFB006E0104 /* countriesDict.json in Resources */,
 				AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */,
 				AF14E21B23EDCD69006E0104 /* QuizViewController.xib in Resources */,
+				AF8DA2B523F30877007DCB09 /* CountryListViewController.xib in Resources */,
 				AF14E1F823EDB794006E0104 /* Main.storyboard in Resources */,
 				AF14E20823EDB854006E0104 /* MainViewController.xib in Resources */,
 			);
@@ -231,7 +245,9 @@
 				AF14E22123F29D78006E0104 /* UIButton.swift in Sources */,
 				AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */,
 				AF14E21223EDBAC7006E0104 /* Country.swift in Sources */,
+				AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */,
 				AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */,
+				AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */,
 				AF14E21023EDBAA5006E0104 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

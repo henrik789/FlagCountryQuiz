@@ -21,12 +21,13 @@ class MainViewController: UIViewController {
     @IBOutlet weak var logoLabel: UILabel!
     @IBOutlet weak var myBtn: UIButton!
     var quizVC = QuizViewController()
+    var clVC = CountryListViewController()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(700)) {
-            self.present(self.quizVC, animated: true, completion: nil)
+            self.present(self.clVC, animated: true, completion: nil)
         }
         
         view.backgroundColor = .white
