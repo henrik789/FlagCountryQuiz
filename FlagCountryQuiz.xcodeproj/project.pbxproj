@@ -17,6 +17,11 @@
 		AF14E21223EDBAC7006E0104 /* Country.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21123EDBAC7006E0104 /* Country.swift */; };
 		AF14E21523EDBAFB006E0104 /* countriesDict.json in Resources */ = {isa = PBXBuildFile; fileRef = AF14E21423EDBAFB006E0104 /* countriesDict.json */; };
 		AF14E21723EDBB36006E0104 /* Countries in Resources */ = {isa = PBXBuildFile; fileRef = AF14E21623EDBB36006E0104 /* Countries */; };
+		AF14E21A23EDCD69006E0104 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21823EDCD69006E0104 /* QuizViewController.swift */; };
+		AF14E21B23EDCD69006E0104 /* QuizViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF14E21923EDCD69006E0104 /* QuizViewController.xib */; };
+		AF14E21D23F17440006E0104 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21C23F17440006E0104 /* UIColor.swift */; };
+		AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21E23F299C6006E0104 /* GetFlags.swift */; };
+		AF14E22123F29D78006E0104 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E22023F29D78006E0104 /* UIButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +37,11 @@
 		AF14E21123EDBAC7006E0104 /* Country.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Country.swift; sourceTree = "<group>"; };
 		AF14E21423EDBAFB006E0104 /* countriesDict.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = countriesDict.json; sourceTree = "<group>"; };
 		AF14E21623EDBB36006E0104 /* Countries */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Countries; sourceTree = "<group>"; };
+		AF14E21823EDCD69006E0104 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		AF14E21923EDCD69006E0104 /* QuizViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizViewController.xib; sourceTree = "<group>"; };
+		AF14E21C23F17440006E0104 /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		AF14E21E23F299C6006E0104 /* GetFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFlags.swift; sourceTree = "<group>"; };
+		AF14E22023F29D78006E0104 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,6 +110,8 @@
 		AF14E20A23EDB950006E0104 /* FlagQuiz */ = {
 			isa = PBXGroup;
 			children = (
+				AF14E21823EDCD69006E0104 /* QuizViewController.swift */,
+				AF14E21923EDCD69006E0104 /* QuizViewController.xib */,
 			);
 			path = FlagQuiz;
 			sourceTree = "<group>";
@@ -121,6 +133,8 @@
 		AF14E20D23EDBA32006E0104 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				AF14E21C23F17440006E0104 /* UIColor.swift */,
+				AF14E22023F29D78006E0104 /* UIButton.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -130,6 +144,7 @@
 			children = (
 				AF14E20F23EDBAA5006E0104 /* SwiftyJSON.swift */,
 				AF14E21123EDBAC7006E0104 /* Country.swift */,
+				AF14E21E23F299C6006E0104 /* GetFlags.swift */,
 				AF14E21423EDBAFB006E0104 /* countriesDict.json */,
 			);
 			path = Data;
@@ -197,6 +212,7 @@
 				AF14E21723EDBB36006E0104 /* Countries in Resources */,
 				AF14E21523EDBAFB006E0104 /* countriesDict.json in Resources */,
 				AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */,
+				AF14E21B23EDCD69006E0104 /* QuizViewController.xib in Resources */,
 				AF14E1F823EDB794006E0104 /* Main.storyboard in Resources */,
 				AF14E20823EDB854006E0104 /* MainViewController.xib in Resources */,
 			);
@@ -210,8 +226,12 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF14E20723EDB854006E0104 /* MainViewController.swift in Sources */,
+				AF14E21D23F17440006E0104 /* UIColor.swift in Sources */,
+				AF14E21A23EDCD69006E0104 /* QuizViewController.swift in Sources */,
+				AF14E22123F29D78006E0104 /* UIButton.swift in Sources */,
 				AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */,
 				AF14E21223EDBAC7006E0104 /* Country.swift in Sources */,
+				AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */,
 				AF14E21023EDBAA5006E0104 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

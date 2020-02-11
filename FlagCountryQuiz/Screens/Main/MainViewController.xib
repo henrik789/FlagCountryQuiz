@@ -11,6 +11,9 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FlagCountryQuiz" customModuleProvider="target">
             <connections>
+                <outlet property="logoLabel" destination="L66-8F-0z6" id="Jsu-sK-2iq"/>
+                <outlet property="myBtn" destination="MZm-yk-wab" id="fcS-R2-o93"/>
+                <outlet property="myView" destination="NAR-4s-ee4" id="T8A-F7-Ov0"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -19,18 +22,39 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Testar!!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
-                    <rect key="frame" x="390" y="185" width="116.5" height="44.5"/>
-                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="37"/>
-                    <nil key="textColor"/>
+                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-4s-ee4">
+                    <rect key="frame" x="0.0" y="29" width="896" height="29"/>
+                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                </view>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-Ty-IDD">
+                    <rect key="frame" x="0.0" y="-11" width="896" height="425"/>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag &amp; Country Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
+                    <rect key="frame" x="0.0" y="148" width="896" height="97.5"/>
+                    <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="77"/>
                     <nil key="highlightedColor"/>
                 </label>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZm-yk-wab">
+                    <rect key="frame" x="348" y="270.5" width="200" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="QJC-wr-EdZ"/>
+                        <constraint firstAttribute="width" constant="200" id="qRS-kc-N1E"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
+                    <state key="normal" title="Start"/>
+                </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
             <constraints>
-                <constraint firstItem="L66-8F-0z6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="9Vr-BP-DVj"/>
-                <constraint firstItem="L66-8F-0z6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="T8T-K4-U8u"/>
+                <constraint firstItem="MZm-yk-wab" firstAttribute="top" secondItem="L66-8F-0z6" secondAttribute="bottom" constant="25" id="3VB-d1-zuD"/>
+                <constraint firstItem="L66-8F-0z6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Csj-tV-DjL"/>
+                <constraint firstItem="MZm-yk-wab" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="abf-wb-BBv"/>
+                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bEq-l3-60H"/>
+                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="11" id="cOw-xE-aYz"/>
+                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kfw-cY-Yks"/>
+                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="5" id="mQq-GG-1ft"/>
+                <constraint firstItem="L66-8F-0z6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="wPD-81-9fn"/>
+                <constraint firstItem="L66-8F-0z6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="zfG-CH-3SI"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="95.758928571428569" y="34.782608695652179"/>
