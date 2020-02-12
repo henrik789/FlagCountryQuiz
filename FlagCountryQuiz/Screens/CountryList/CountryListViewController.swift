@@ -21,6 +21,10 @@ class CountryListViewController: UIViewController {
         self.countryCV.dataSource = self
         self.countryCV.delegate = self
         self.countryCV.register(UINib.init(nibName: CountryListCell.identifier, bundle: nil), forCellWithReuseIdentifier: CountryListCell.identifier)
+        
+        for i in list {
+            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area) Language: \(i.language)")
+        }
     }
     
     
@@ -37,7 +41,7 @@ extension CountryListViewController: UICollectionViewDelegate, UICollectionViewD
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = countryCV.dequeueReusableCell(withReuseIdentifier: CountryListCell.identifier, for: indexPath) as! CountryListCell
         let country = list[indexPath.row]
-        cell.config(countryname: country.name)
+        cell.config(countryname: country.name, capital: country.capital, region: country.region, subRegion: country.subregion, population: country.population, area: country.area, language: country.language, flagUrl: country.flagUrl, latitude: country.latitude, longitude: country.longitude, currrency: country.currency, currrencySymbol: country.currencySymbol)
         
         return cell
     }

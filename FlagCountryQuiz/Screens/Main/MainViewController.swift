@@ -17,37 +17,121 @@ public var screenHeight: CGFloat {
 }
 
 class MainViewController: UIViewController {
+    
+
+    @IBOutlet weak var detailView: UITextView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var logoLabel: UILabel!
     @IBOutlet weak var myBtn: UIButton!
     var quizVC = QuizViewController()
     var clVC = CountryListViewController()
+    @IBOutlet weak var countryLabel: UILabel!
+    var getFlag = GetFlags()
+    var list = [Country]()
+    var names = [String]()
+    @IBOutlet weak var countryTextView: UITextView!
+    @IBOutlet weak var buttonOne: UIButton!
+    @IBOutlet weak var buttonTwo: UIButton!
+    @IBOutlet weak var buttonThree: UIButton!
+    @IBOutlet weak var buttonFour: UIButton!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(700)) {
-            self.present(self.clVC, animated: true, completion: nil)
+//        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(700)) {
+//            self.present(self.clVC, animated: true, completion: nil)
+//        }
+        
+        view.backgroundColor = .myWhite
+        myView.backgroundColor = .black
+        myView.layer.cornerRadius = myView.bounds.height / 2
+        logoLabel.textColor = .black
+        buttonOne.backgroundColor = .myYellow
+        buttonTwo.backgroundColor = .myBlue
+        buttonThree.backgroundColor = .myGreen
+        buttonFour.backgroundColor =  .myRed
+        buttonOne.layer.cornerRadius = buttonOne.bounds.height / 2
+        buttonTwo.layer.cornerRadius = buttonOne.bounds.height / 2
+        buttonThree.layer.cornerRadius = buttonOne.bounds.height / 2
+        buttonFour.layer.cornerRadius = buttonOne.bounds.height / 2
+        animate()
+        list = getFlag.readJSONFromFile()
+        for i in list {
+            let myString = i.name
+            names.append(myString)
         }
-        
-        view.backgroundColor = .white
-        myView.backgroundColor = .clear
-        myBtn.backgroundColor = .white
-        myBtn.layer.borderColor = UIColor.myPink.cgColor
-        myBtn.setTitleColor(.myPink, for: .normal)
-        myBtn.layer.borderWidth = 3
-        myBtn.layer.cornerRadius = myBtn.bounds.height / 2
-        logoLabel.textColor = .myPink
-        
-        
+//        fire()
+//        fireDetail()
 //        createParticles()
-//        makeEmitterCell(color: .blue)
-        
-        
-        
-        
     }
     
+    @IBAction func buttonOne(_ sender: Any) {
+        self.present(self.quizVC, animated: true, completion: nil)
+    }
+    @IBAction func buttonTwo(_ sender: Any) {
+        self.present(self.clVC, animated: true, completion: nil)
+    }
+    @IBAction func buttonThree(_ sender: Any) {
+        animate()
+    }
+    
+    func animate() {
+        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+                self.buttonOne.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        })
+        UIView.animate(withDuration: 0.7, delay: 0.3, options: .curveEaseInOut, animations: {
+            self.buttonOne.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+        UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseInOut, animations: {
+            self.buttonTwo.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        })
+        UIView.animate(withDuration: 0.6, delay: 0.6, options: .curveEaseInOut, animations: {
+            self.buttonTwo.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+        UIView.animate(withDuration: 0.3, delay: 0.6, options: .curveEaseInOut, animations: {
+            self.buttonThree.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        })
+        UIView.animate(withDuration: 0.5, delay: 0.9, options: .curveEaseInOut, animations: {
+            self.buttonThree.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+        UIView.animate(withDuration: 0.3, delay: 0.9, options: .curveEaseInOut, animations: {
+            self.buttonFour.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
+        })
+        UIView.animate(withDuration: 0.4, delay: 1.2, options: .curveEaseInOut, animations: {
+            self.buttonFour.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+
+    }
+    
+    
+    
+    func fire() {
+        var index = 0
+        Timer.scheduledTimer(withTimeInterval: 0.1, repeats: true, block: { [weak self] timer in
+            if index < (self?.names.count)! {
+                let char = self!.names[index]
+                self!.countryLabel.text! = "Loading data: \(index) \(char)"
+                index += 1
+            } else {
+                timer.invalidate()
+            }
+        })
+    }
+    
+    func fireDetail()
+    {
+        var index = 0
+        Timer.scheduledTimer(withTimeInterval: 0.2, repeats: true, block: { [weak self] timer in
+            if index < (self?.names.count)! {
+//                let char = self!.names[index]
+                self!.detailView.text! = "Country: \(index) \(self!.list[index].name) \(self!.list[index].capital) \(self!.list[index].region) \(self!.list[index].population) \(self!.list[index].language)"
+                index += 1
+            } else {
+                timer.invalidate()
+            }
+        })
+    }
     
     func createParticles() {
         let particleEmitter = CAEmitterLayer()
@@ -79,7 +163,7 @@ class MainViewController: UIViewController {
         cell.emissionRange = CGFloat.pi / 4
         cell.spin = 1
         cell.spinRange = 3
-        cell.scaleRange = 3.9
+        cell.scaleRange = 1.9
         cell.scaleSpeed = 1.2
         
         cell.contents = UIImage(named: "snowflake1")?.cgImage

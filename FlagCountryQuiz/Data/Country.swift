@@ -35,7 +35,7 @@ extension Country {
         let subregion = json["subregion"].stringValue
         let population = json["population"].stringValue
         let area = json["area"].stringValue
-        let language = json["languages"]["nativeName"].stringValue
+        let language = json["languages"][0]["name"].stringValue
         let flagUrl = json["flag"].stringValue
         let latitude = json["latlng"][0].stringValue
         let longitude = json["latlng"][1].stringValue

@@ -11,9 +11,14 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="MainViewController" customModule="FlagCountryQuiz" customModuleProvider="target">
             <connections>
+                <outlet property="buttonFour" destination="gWU-hz-fdS" id="RMC-DR-DmW"/>
+                <outlet property="buttonOne" destination="M3w-Pf-iqV" id="BEd-EH-V8v"/>
+                <outlet property="buttonThree" destination="PeC-Hh-BO9" id="gxz-Vm-lOA"/>
+                <outlet property="buttonTwo" destination="DBi-b6-exa" id="blZ-Hl-BIA"/>
+                <outlet property="countryLabel" destination="hSt-f4-Yu0" id="sK7-0A-snk"/>
+                <outlet property="detailView" destination="BfE-xw-xbJ" id="1M9-7J-WOM"/>
                 <outlet property="logoLabel" destination="L66-8F-0z6" id="Jsu-sK-2iq"/>
-                <outlet property="myBtn" destination="MZm-yk-wab" id="fcS-R2-o93"/>
-                <outlet property="myView" destination="NAR-4s-ee4" id="T8A-F7-Ov0"/>
+                <outlet property="myView" destination="NEQ-ZQ-qRt" id="gLe-ix-iT5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -22,42 +27,150 @@
             <rect key="frame" x="0.0" y="0.0" width="896" height="414"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NAR-4s-ee4">
-                    <rect key="frame" x="0.0" y="29" width="896" height="29"/>
-                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iV0-w0-HZf">
+                    <rect key="frame" x="75" y="20" width="746" height="60"/>
+                    <subviews>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag &amp; Country Quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
+                            <rect key="frame" x="0.0" y="1.5" width="685" height="57.5"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="42"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEQ-ZQ-qRt">
+                            <rect key="frame" x="686" y="0.0" width="60" height="60"/>
+                            <subviews>
+                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_white" translatesAutoresizingMaskIntoConstraints="NO" id="nGW-C7-l3m">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                </imageView>
+                            </subviews>
+                            <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstItem="nGW-C7-l3m" firstAttribute="height" secondItem="NEQ-ZQ-qRt" secondAttribute="height" id="4AL-PF-qi8"/>
+                                <constraint firstAttribute="height" constant="60" id="8r2-qi-xTE"/>
+                                <constraint firstAttribute="width" constant="60" id="ZpE-Og-uup"/>
+                                <constraint firstItem="nGW-C7-l3m" firstAttribute="width" secondItem="NEQ-ZQ-qRt" secondAttribute="width" id="g8y-qT-crZ"/>
+                                <constraint firstItem="nGW-C7-l3m" firstAttribute="leading" secondItem="NEQ-ZQ-qRt" secondAttribute="leading" id="oXn-3f-HJI"/>
+                                <constraint firstItem="nGW-C7-l3m" firstAttribute="top" secondItem="NEQ-ZQ-qRt" secondAttribute="top" id="vkP-fE-Psx"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                </stackView>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTy-AQ-M4r">
+                    <rect key="frame" x="75" y="78.5" width="685" height="1"/>
+                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="1" id="bup-Ik-BZQ"/>
+                    </constraints>
                 </view>
-                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2Ua-Ty-IDD">
-                    <rect key="frame" x="0.0" y="-11" width="896" height="425"/>
-                </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag &amp; Country Quiz" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
-                    <rect key="frame" x="0.0" y="148" width="896" height="97.5"/>
-                    <fontDescription key="fontDescription" name="SnellRoundhand-Bold" family="Snell Roundhand" pointSize="77"/>
+                <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-Ia-cz8">
+                    <rect key="frame" x="75" y="140" width="746" height="100"/>
+                    <subviews>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3w-Pf-iqV">
+                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="Pfc-SN-Dbf"/>
+                                <constraint firstAttribute="width" constant="100" id="slh-hx-I8Y"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="FlagQuiz">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonOne:" destination="-1" eventType="touchUpInside" id="eXw-ag-Xla"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBi-b6-exa">
+                            <rect key="frame" x="215.5" y="0.0" width="100" height="100"/>
+                            <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="FnT-Pl-cZA"/>
+                                <constraint firstAttribute="width" constant="100" id="frD-uw-od3"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="Countries">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonTwo:" destination="-1" eventType="touchUpInside" id="vWp-TE-LWZ"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-Hh-BO9">
+                            <rect key="frame" x="430.5" y="0.0" width="100" height="100"/>
+                            <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="w92-ZJ-Moc"/>
+                                <constraint firstAttribute="width" constant="100" id="xcK-rb-Spc"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="Population">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonThree:" destination="-1" eventType="touchUpInside" id="SbI-W8-hb1"/>
+                            </connections>
+                        </button>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWU-hz-fdS">
+                            <rect key="frame" x="646" y="0.0" width="100" height="100"/>
+                            <color key="backgroundColor" red="0.95024377110000002" green="0.91168469190000001" blue="0.78716880079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="100" id="0th-v0-6Wx"/>
+                                <constraint firstAttribute="width" constant="100" id="NWM-0k-FrE"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="Settings">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </state>
+                            <connections>
+                                <action selector="buttonThree:" destination="-1" eventType="touchUpInside" id="lWH-a2-WNH"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="100" id="utB-eA-jg1"/>
+                    </constraints>
+                </stackView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vexillology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-f4-Yu0">
+                    <rect key="frame" x="75" y="290" width="79.5" height="15"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="15" id="YP6-MP-a2w"/>
+                    </constraints>
+                    <fontDescription key="fontDescription" name="Courier-Oblique" family="Courier" pointSize="12"/>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                     <nil key="highlightedColor"/>
                 </label>
-                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MZm-yk-wab">
-                    <rect key="frame" x="348" y="270.5" width="200" height="50"/>
+                <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-xw-xbJ">
+                    <rect key="frame" x="75" y="305" width="746" height="75"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="50" id="QJC-wr-EdZ"/>
-                        <constraint firstAttribute="width" constant="200" id="qRS-kc-N1E"/>
+                        <constraint firstAttribute="height" constant="75" id="R78-Qz-aAV"/>
                     </constraints>
-                    <fontDescription key="fontDescription" type="system" pointSize="26"/>
-                    <state key="normal" title="Start"/>
-                </button>
+                    <string key="text">A person who studies flags is a vexillologist, one who designs flags is a vexillographer, and the art of flag-designing is called vexillography. One who is a hobbyist or general admirer of flags is a vexillophile.  (Source: Wikipedia)</string>
+                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="12"/>
+                    <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                </textView>
             </subviews>
             <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
             <constraints>
-                <constraint firstItem="MZm-yk-wab" firstAttribute="top" secondItem="L66-8F-0z6" secondAttribute="bottom" constant="25" id="3VB-d1-zuD"/>
-                <constraint firstItem="L66-8F-0z6" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="Csj-tV-DjL"/>
-                <constraint firstItem="MZm-yk-wab" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="abf-wb-BBv"/>
-                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="bEq-l3-60H"/>
-                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" constant="11" id="cOw-xE-aYz"/>
-                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="kfw-cY-Yks"/>
-                <constraint firstItem="2Ua-Ty-IDD" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" constant="5" id="mQq-GG-1ft"/>
-                <constraint firstItem="L66-8F-0z6" firstAttribute="centerY" secondItem="fnl-2z-Ty3" secondAttribute="centerY" id="wPD-81-9fn"/>
-                <constraint firstItem="L66-8F-0z6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="zfG-CH-3SI"/>
+                <constraint firstItem="iV0-w0-HZf" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="4r1-jb-VV6"/>
+                <constraint firstItem="BfE-xw-xbJ" firstAttribute="width" secondItem="iV0-w0-HZf" secondAttribute="width" id="5RQ-M4-pOC"/>
+                <constraint firstItem="hKk-Ia-cz8" firstAttribute="width" secondItem="iV0-w0-HZf" secondAttribute="width" id="EqQ-rj-fIf"/>
+                <constraint firstItem="hKk-Ia-cz8" firstAttribute="leading" secondItem="iV0-w0-HZf" secondAttribute="leading" id="UQi-EV-MjA"/>
+                <constraint firstItem="BfE-xw-xbJ" firstAttribute="top" secondItem="hSt-f4-Yu0" secondAttribute="bottom" id="alz-cH-rsL"/>
+                <constraint firstItem="nTy-AQ-M4r" firstAttribute="width" secondItem="L66-8F-0z6" secondAttribute="width" id="bPl-k7-Z7X"/>
+                <constraint firstItem="nTy-AQ-M4r" firstAttribute="leading" secondItem="iV0-w0-HZf" secondAttribute="leading" id="jzW-8v-0WK"/>
+                <constraint firstItem="BfE-xw-xbJ" firstAttribute="leading" secondItem="iV0-w0-HZf" secondAttribute="leading" id="kI9-yC-O2D"/>
+                <constraint firstItem="iV0-w0-HZf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ojr-IU-JZu"/>
+                <constraint firstItem="hKk-Ia-cz8" firstAttribute="top" secondItem="iV0-w0-HZf" secondAttribute="bottom" constant="60" id="pGp-5f-axr"/>
+                <constraint firstItem="iV0-w0-HZf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-150" id="u6V-0m-IQE"/>
+                <constraint firstItem="hSt-f4-Yu0" firstAttribute="top" secondItem="hKk-Ia-cz8" secondAttribute="bottom" constant="50" id="wpH-dL-POK"/>
+                <constraint firstItem="nTy-AQ-M4r" firstAttribute="top" secondItem="iV0-w0-HZf" secondAttribute="bottom" constant="-1.5" id="wxA-nS-XAt"/>
+                <constraint firstItem="hSt-f4-Yu0" firstAttribute="leading" secondItem="iV0-w0-HZf" secondAttribute="leading" id="ytH-zF-9t3"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="95.758928571428569" y="34.782608695652179"/>
         </view>
     </objects>
+    <resources>
+        <image name="globe_white" width="1500" height="1500"/>
+    </resources>
 </document>

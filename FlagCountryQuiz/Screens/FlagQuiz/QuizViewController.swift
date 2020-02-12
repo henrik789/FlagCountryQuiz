@@ -26,7 +26,9 @@ class QuizViewController: UIViewController {
     var time = 0
     var timer = Timer()
     var list = [Country]()
+//    var mainVC = MainViewController()
     
+    @IBOutlet weak var globeView: UIView!
     @IBOutlet var startView: UIView!
 //    @IBOutlet weak var flagView: UIView!
     @IBOutlet weak var countdownLabelHome: UILabel!
@@ -36,7 +38,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var landTwo: UIButton!
     @IBOutlet weak var landThre: UIButton!
     @IBOutlet weak var landFour: UIButton!
-    @IBOutlet weak var restartBtn: UIButton!
+    @IBOutlet weak var mainBtn: UIButton!
     @IBAction func restartBtn(_ sender: Any) {
         startFresh()
     }
@@ -73,12 +75,13 @@ class QuizViewController: UIViewController {
     }
     @IBOutlet weak var flagImage: UIImageView!
     
-    @IBAction func menuButton(_ sender: Any) {
-        startView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-        //        startView.layer.cornerRadius = screenHeight / 4
-        startView.layer.masksToBounds = true
-        view.addSubview(startView)
-        
+    @IBAction func mainBtn(_ sender: Any) {
+//        startView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
+//        //        startView.layer.cornerRadius = screenHeight / 4
+//        startView.layer.masksToBounds = true
+//        view.addSubview(startView)
+//        self.present(self.mainVC, animated: true, completion: nil)
+        view.backgroundColor = .myBlue
         
     }
     
@@ -96,11 +99,13 @@ class QuizViewController: UIViewController {
     
     
     func config() {
+        view.backgroundColor = .myWhite
         newFlag((Any).self)
         landOne.commonStyle()
         landTwo.commonStyle()
         landThre.commonStyle()
         landFour.commonStyle()
+        globeView.layer.cornerRadius = globeView.bounds.height / 2
 //        restartBtn.commonStyle()
 //        back.commonStyle()
 //        highscore.commonStyle()
