@@ -69,8 +69,9 @@ class QuizViewController: UIViewController {
         flagCounter = flagCounter + 1
         givenLand = getFlags.buildFlagArray()
         flagImage.image = UIImage(named: givenLand + ".png")
+        print(givenLand + ".png")
         setCountryName(land: givenLand)
-//        flagLabel.text = "Flags: \(flagCounter) / \(getFlags.totalFlags.count)"
+        flagLabel.text = "Flags: \(flagCounter) / \(getFlags.totalFlags.count)"
         //        timer?.fire()
     }
     @IBOutlet weak var flagImage: UIImageView!
@@ -99,7 +100,7 @@ class QuizViewController: UIViewController {
     
     
     func config() {
-        view.backgroundColor = .myWhite
+        view.backgroundColor = .myBeige
         newFlag((Any).self)
         landOne.commonStyle()
         landTwo.commonStyle()
@@ -169,38 +170,38 @@ class QuizViewController: UIViewController {
                 
                 UIView.transition(with: button, duration: 0.3, options: .curveEaseOut, animations: {
                     button.backgroundColor = .greenOne
-                    button.setTitleColor(.white, for: .normal)
+                    button.setTitleColor(.myWhite2, for: .normal)
                 })  { _ in
                     self.points = self.points + 1
                     self.pointsLabel.text = "Points: \(self.points)"
                     //                    self.timer?.invalidate()
                     self.newFlag((Any).self)
-                    button.backgroundColor = UIColor.white
+                    button.backgroundColor = .myWhite2
                     button.setTitleColor(.black, for: .normal)
                 }
                 
             }else {
                 UIView.transition(with: button, duration: 0.3, options: .curveEaseOut, animations: {
                     button.backgroundColor = .redOne
-                    button.setTitleColor(.white, for: .normal)
+                    button.setTitleColor(.myWhite2, for: .normal)
                 })  { _ in
-                    button.backgroundColor = UIColor.white
+                    button.backgroundColor = .myWhite2
                     button.setTitleColor(.black, for: .normal)
                     print(self.randomNumber)
                     if self.randomNumber == 1 {
                         UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
                             self.landOne.backgroundColor = .greenOne
-                            self.landOne.setTitleColor(.white, for: .normal)
+                            self.landOne.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
                             //                            self.pointsLabel.text = "Points: \(self.points)"
                             self.newFlag((Any).self)
-                            self.landOne.backgroundColor = UIColor.white
+                            self.landOne.backgroundColor = .myWhite2
                             self.landOne.setTitleColor(.black, for: .normal)
                         }
                     } else if self.randomNumber == 2 {
                         UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
                             self.landTwo.backgroundColor = .greenOne
-                            self.landTwo.setTitleColor(.white, for: .normal)
+                            self.landTwo.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
                             //                            self.pointsLabel.text = "Points: \(self.points)"
                             self.newFlag((Any).self)
@@ -210,21 +211,21 @@ class QuizViewController: UIViewController {
                     }else if self.randomNumber == 3 {
                         UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
                             self.landThre.backgroundColor = .greenOne
-                            self.landThre.setTitleColor(.white, for: .normal)
+                            self.landThre.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
                             //                            self.pointsLabel.text = "Points: \(self.points)"
                             self.newFlag((Any).self)
-                            self.landThre.backgroundColor = UIColor.white
+                            self.landThre.backgroundColor = .myWhite2
                             self.landThre.setTitleColor(.black, for: .normal)
                         }
                     } else if self.randomNumber == 4 {
                         UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
                             self.landFour.backgroundColor = .greenOne
-                            self.landFour.setTitleColor(.white, for: .normal)
+                            self.landFour.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
                             //                            self.pointsLabel.text = "Points: \(self.points)"
                             self.newFlag((Any).self)
-                            self.landFour.backgroundColor = UIColor.white
+                            self.landFour.backgroundColor = .myWhite2
                             self.landFour.setTitleColor(.black, for: .normal)
                         }
                     }

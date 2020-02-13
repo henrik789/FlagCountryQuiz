@@ -14,17 +14,22 @@ class CountryListViewController: UIViewController {
     var getFlags = GetFlags()
     var list = [Country]()
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+//        view.backgroundColor = .myBlue
+        countryCV.backgroundColor = .myWhite2
         
         list = getFlags.readJSONFromFile()
         self.countryCV.dataSource = self
         self.countryCV.delegate = self
         self.countryCV.register(UINib.init(nibName: CountryListCell.identifier, bundle: nil), forCellWithReuseIdentifier: CountryListCell.identifier)
         
-        for i in list {
-            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area) Language: \(i.language)")
-        }
+//        for i in list {
+//            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area) Language: \(i.language)")
+//        }
+
     }
     
     

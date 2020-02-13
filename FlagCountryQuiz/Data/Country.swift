@@ -15,6 +15,7 @@ struct Country {
     var currency : String = ""
     var currencySymbol : String = ""
     
+    
 //    func fullName () -> String {
 //        return "\(self.firstName) \(self.lastName)"
 //    }
@@ -36,7 +37,7 @@ extension Country {
         let population = json["population"].stringValue
         let area = json["area"].stringValue
         let language = json["languages"][0]["name"].stringValue
-        let flagUrl = json["flag"].stringValue
+        let flagUrl = json["topLevelDomain"][0].stringValue
         let latitude = json["latlng"][0].stringValue
         let longitude = json["latlng"][1].stringValue
         let currency = json["currencies"][0]["name"].stringValue

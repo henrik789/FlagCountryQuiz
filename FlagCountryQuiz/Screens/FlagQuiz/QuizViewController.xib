@@ -13,6 +13,7 @@
             <connections>
                 <outlet property="countdownLabelHome" destination="WcO-DG-moM" id="uAJ-Uy-yKb"/>
                 <outlet property="flagImage" destination="ez1-hH-jA9" id="wH8-VX-gxk"/>
+                <outlet property="flagLabel" destination="kdi-RM-9Pm" id="BX1-EC-46P"/>
                 <outlet property="globeView" destination="9E8-WS-IKX" id="5wK-jf-Rgs"/>
                 <outlet property="landFour" destination="b9D-P2-y5i" id="N4A-bD-bEP"/>
                 <outlet property="landOne" destination="M6Z-eK-jXo" id="C0m-Ed-Wd3"/>
@@ -46,14 +47,20 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-DG-moM">
-                                            <rect key="frame" x="316.5" y="14" width="40.5" height="22"/>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-DG-moM">
+                                            <rect key="frame" x="247.5" y="14" width="86.5" height="22"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdi-RM-9Pm">
+                                            <rect key="frame" x="450" y="15" width="45.5" height="20.5"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-BA-TA8">
-                                            <rect key="frame" x="542" y="14" width="49" height="22"/>
+                                            <rect key="frame" x="611" y="14" width="49" height="22"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                             <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                             <nil key="highlightedColor"/>

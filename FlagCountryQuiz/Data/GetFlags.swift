@@ -37,24 +37,39 @@ class GetFlags {
                 return components.joined(separator: ".")
             }
         }
-        return "Swedn"
+        return "Sweden"
+    }
+
+    func buildImageArray() -> [String] {
+        
+        let docPath = Bundle.main.resourcePath! + "/" + "Countries"
+        let fileManager = FileManager.default
+        let filesFromBundle = try! fileManager.contentsOfDirectory(atPath: docPath)
+        pictures = filesFromBundle
+        var images = [String]()
+        for image in pictures {
+            images.append(checkCountry(landCode: image))
+        }
+        
+        return images
+        
     }
     
     func buildFlagArray1(number: Int) -> String {
-        
+
         //            let randomNumber = Int.random(in: 0..<totalFlags.count )
         let randomFlag = totalFlags[number]
         let fileName = randomFlag
-        
+
         var components = fileName.components(separatedBy: ".")
         if components.count > 1 { // If there is a file extension
             components.removeLast()
             //                print("1: \(components.joined(separator: "."))")
             return components.joined(separator: ".")
         }
-        
+
         return fileName
-        
+
     }
 
     
