@@ -8,17 +8,19 @@
 
 import UIKit
 
-public var screenWidth: CGFloat {
-    return UIScreen.main.bounds.width
+protocol MainViewControllerDelegate: class {
+    func mainViewController(_ viewController: MainViewController, didSelect action: MainViewControllerAction)
 }
 
-public var screenHeight: CGFloat {
-    return UIScreen.main.bounds.height
+enum MainViewControllerAction {
+    case quiz
+    case countryList
 }
 
 class MainViewController: UIViewController {
     
-
+    weak var delegate: MainViewControllerDelegate?
+    
     @IBOutlet weak var detailView: UITextView!
     @IBOutlet weak var myView: UIView!
     @IBOutlet weak var logoLabel: UILabel!
@@ -35,10 +37,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak var buttonThree: UIButton!
     @IBOutlet weak var buttonFour: UIButton!
     
+    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "MainView"
 //        DispatchQueue.main.asyncAfter(deadline: .now() + .milliseconds(700)) {
 //            self.present(self.clVC, animated: true, completion: nil)
 //        }
@@ -61,13 +71,19 @@ class MainViewController: UIViewController {
             let myString = i.name
             names.append(myString)
         }
+        let navbar = navigationController?.navigationBar
+        navbar?.isHidden = true
+        navbar?.prefersLargeTitles = false
+        navbar?.barStyle = .default
 //        fire()
 //        fireDetail()
 //        createParticles()
     }
     
     @IBAction func buttonOne(_ sender: Any) {
-        self.present(self.quizVC, animated: true, completion: nil)
+//        self.present(self.quizVC, animated: true, completion: nil)
+        print("Trycker")
+        delegate?.mainViewController(self, didSelect: .quiz)
     }
     @IBAction func buttonTwo(_ sender: Any) {
         self.present(self.clVC, animated: true, completion: nil)

@@ -3,12 +3,6 @@ import UIKit
 
 class QuizViewController: UIViewController {
 
-    public var screenWidth: CGFloat {
-        return UIScreen.main.bounds.width
-    }
-    public var screenHeight: CGFloat {
-        return UIScreen.main.bounds.height
-    }
     var givenLand = String()
     var landFullname = String()
     var getFlags = GetFlags()
@@ -19,7 +13,7 @@ class QuizViewController: UIViewController {
     var time = 0
     var timer = Timer()
     var list = [Country]()
-    var mainVC = MainViewController()
+//    var mainVC = MainViewController()
     
     @IBOutlet weak var globeView: UIView!
     @IBOutlet var startView: UIView!
@@ -34,11 +28,11 @@ class QuizViewController: UIViewController {
     @IBAction func restartBtn(_ sender: Any) {
         startFresh()
     }
-    @IBAction func backBtn(_ sender: Any) {
-        
-
-        startView.removeFromSuperview()
-    }
+//    @IBAction func backBtn(_ sender: Any) {
+//
+//
+//        startView.removeFromSuperview()
+//    }
     
     @IBAction func landOne(_ sender: Any) {
         let buttonOne = sender
@@ -75,6 +69,7 @@ class QuizViewController: UIViewController {
 //        mainVC.dismiss(animated: true) {
 //            print("working")
 //        }
+        navigationController?.popViewController(animated: true)
         view.backgroundColor = .myBlue
         
     }
