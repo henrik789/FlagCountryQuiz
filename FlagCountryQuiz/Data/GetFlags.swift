@@ -84,7 +84,6 @@ class GetFlags {
                 let personList = json[].map { (_, personJSON) in
                     return Country(json: personJSON)
                 }
-                print(personList.count, personList[6].language, personList[6].currency, personList[6].longitude )
                 countryList = personList
                 
             } catch {

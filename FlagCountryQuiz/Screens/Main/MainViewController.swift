@@ -51,10 +51,10 @@ class MainViewController: UIViewController {
         buttonTwo.backgroundColor = .myBlue
         buttonThree.backgroundColor = .myGreen
         buttonFour.backgroundColor =  .myRed
-        buttonOne.layer.cornerRadius = buttonOne.bounds.height / 2
-        buttonTwo.layer.cornerRadius = buttonOne.bounds.height / 2
-        buttonThree.layer.cornerRadius = buttonOne.bounds.height / 2
-        buttonFour.layer.cornerRadius = buttonOne.bounds.height / 2
+        buttonOne.mainStyle()
+        buttonTwo.mainStyle()
+        buttonThree.mainStyle()
+        buttonFour.mainStyle()
         animate()
         list = getFlag.readJSONFromFile()
         for i in list {
@@ -77,28 +77,28 @@ class MainViewController: UIViewController {
     }
     
     func animate() {
-        UIView.animate(withDuration: 0.5, delay: 0, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseInOut, animations: {
                 self.buttonOne.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         })
-        UIView.animate(withDuration: 0.7, delay: 0.3, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseInOut, animations: {
             self.buttonOne.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
-        UIView.animate(withDuration: 0.5, delay: 0.3, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.3, options: .curveEaseInOut, animations: {
             self.buttonTwo.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         })
-        UIView.animate(withDuration: 0.6, delay: 0.6, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.6, options: .curveEaseInOut, animations: {
             self.buttonTwo.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
         UIView.animate(withDuration: 0.3, delay: 0.6, options: .curveEaseInOut, animations: {
             self.buttonThree.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         })
-        UIView.animate(withDuration: 0.5, delay: 0.9, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 0.9, options: .curveEaseInOut, animations: {
             self.buttonThree.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
         UIView.animate(withDuration: 0.3, delay: 0.9, options: .curveEaseInOut, animations: {
             self.buttonFour.transform = CGAffineTransform(scaleX: 1.5, y: 1.5)
         })
-        UIView.animate(withDuration: 0.4, delay: 1.2, options: .curveEaseInOut, animations: {
+        UIView.animate(withDuration: 0.3, delay: 1.2, options: .curveEaseInOut, animations: {
             self.buttonFour.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
 
