@@ -31,6 +31,7 @@ class CountryListCell: UICollectionViewCell{
 
         mainView.backgroundColor = .myBeige
         mainView.layer.cornerRadius = 16
+        
         countrynameLabel.text = "Country: \(countryname)"
         capitalLabel.text = "Capital: \(capital)"
         regionLabel.text = "Region: \(region)"

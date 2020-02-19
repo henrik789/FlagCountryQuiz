@@ -15,8 +15,8 @@ class QuizViewController: UIViewController {
     var list = [Country]()
 //    var mainVC = MainViewController()
     
-    @IBOutlet weak var globeView: UIView!
-    @IBOutlet var startView: UIView!
+//    @IBOutlet weak var globeView: UIView!
+//    @IBOutlet var startView: UIView!
     @IBOutlet weak var countdownLabelHome: UILabel!
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
@@ -94,7 +94,8 @@ class QuizViewController: UIViewController {
         landTwo.commonStyle()
         landThre.commonStyle()
         landFour.commonStyle()
-        globeView.layer.cornerRadius = globeView.bounds.height / 2
+        mainBtn.backgroundColor = .myYellow
+        mainBtn.layer.cornerRadius = mainBtn.bounds.height / 2
         timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }

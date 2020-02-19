@@ -13,44 +13,65 @@ class CountryListViewController: UIViewController {
     @IBOutlet weak var countryCV: UICollectionView!
     var getFlags = GetFlags()
     var list = [Country]()
-    
+    var searchList = [Country]()
+    @IBOutlet weak var mainButton: UIButton!
+    @IBOutlet weak var searchBar: UISearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-//        view.backgroundColor = .myBlue
-        countryCV.backgroundColor = .myWhite2
-        
-        list = getFlags.readJSONFromFile()
-        self.countryCV.dataSource = self
-        self.countryCV.delegate = self
-        self.countryCV.register(UINib.init(nibName: CountryListCell.identifier, bundle: nil), forCellWithReuseIdentifier: CountryListCell.identifier)
-        
+        config()
 //        for i in list {
 //            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area) Language: \(i.language)")
 //        }
 
     }
     
+    @IBAction func mainButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+    }
     
+    func config() {
+        searchBar.delegate = self
+        countryCV.backgroundColor = .myWhite2
+        list = getFlags.readJSONFromFile()
+        self.countryCV.dataSource = self
+        self.countryCV.delegate = self
+        self.countryCV.register(UINib.init(nibName: CountryListCell.identifier, bundle: nil), forCellWithReuseIdentifier: CountryListCell.identifier)
+        mainButton.layer.cornerRadius = mainButton.bounds.height / 2
+        mainButton.backgroundColor = .myBlue
+    }
     
+
     
 }
 
 extension CountryListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return list.count
+        return searchList.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = countryCV.dequeueReusableCell(withReuseIdentifier: CountryListCell.identifier, for: indexPath) as! CountryListCell
-        let country = list[indexPath.row]
+        let country = searchList[indexPath.row]
         cell.config(countryname: country.name, capital: country.capital, region: country.region, subRegion: country.subregion, population: country.population, area: country.area, language: country.language, flagUrl: country.flagUrl, latitude: country.latitude, longitude: country.longitude, currrency: country.currency, currrencySymbol: country.currencySymbol)
         
         return cell
     }
     
+    
+}
+
+extension CountryListViewController: UISearchBarDelegate {
+    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        searchList = list.filter({ country -> Bool in
+                if searchText.isEmpty { return true }
+                return country.name.lowercased().contains(searchText.lowercased())
+        })
+        countryCV.reloadData()
+        print(searchText)
+    }
     
 }
 

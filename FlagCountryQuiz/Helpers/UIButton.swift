@@ -14,7 +14,7 @@ extension UIButton {
         layer.shadowPath = UIBezierPath(roundedRect: bounds, cornerRadius: layer.cornerRadius).cgPath
         layer.shadowRadius = 4
         layer.shadowOffset = .zero
-        layer.shadowOpacity = 0.5
+        layer.shadowOpacity = 0.3
         layer.masksToBounds = false
     }
     

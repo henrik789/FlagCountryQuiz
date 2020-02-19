@@ -86,7 +86,7 @@ class MainViewController: UIViewController {
         delegate?.mainViewController(self, didSelect: .quiz)
     }
     @IBAction func buttonTwo(_ sender: Any) {
-        self.present(self.clVC, animated: true, completion: nil)
+        delegate?.mainViewController(self, didSelect: .countryList)
     }
     @IBAction func buttonThree(_ sender: Any) {
         animate()

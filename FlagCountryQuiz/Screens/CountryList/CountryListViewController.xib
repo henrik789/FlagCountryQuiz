@@ -12,6 +12,8 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="CountryListViewController" customModule="FlagCountryQuiz" customModuleProvider="target">
             <connections>
                 <outlet property="countryCV" destination="wrr-g8-rhA" id="3AP-fa-S8Z"/>
+                <outlet property="mainButton" destination="64O-UC-NMk" id="kDl-Ep-oRl"/>
+                <outlet property="searchBar" destination="MkK-TK-aQ5" id="ISf-c4-V2X"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -21,47 +23,50 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="DRt-92-FrI">
-                    <rect key="frame" x="0.0" y="0.0" width="896" height="70"/>
+                    <rect key="frame" x="0.0" y="0.0" width="896" height="66"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-xz-PKV">
-                            <rect key="frame" x="40" y="0.0" width="185" height="70"/>
-                            <constraints>
-                                <constraint firstAttribute="width" constant="185" id="1fU-tE-hBe"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
-                            <nil key="textColor"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <searchBar alpha="0.0" contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="MkK-TK-aQ5">
-                            <rect key="frame" x="235" y="0.0" width="517" height="70"/>
-                            <textInputTraits key="textInputTraits"/>
-                        </searchBar>
-                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64O-UC-NMk">
-                            <rect key="frame" x="772" y="0.0" width="70" height="70"/>
-                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="70" id="cWu-rw-Y3g"/>
-                                <constraint firstAttribute="width" constant="70" id="dGe-gS-s3w"/>
-                            </constraints>
-                            <state key="normal" title="Button" image="globe_white"/>
-                        </button>
+                        <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Wkq-Bf-lnu">
+                            <rect key="frame" x="45" y="8" width="806" height="50"/>
+                            <subviews>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CountryList" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aqg-xz-PKV">
+                                    <rect key="frame" x="0.0" y="0.0" width="166.5" height="50"/>
+                                    <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
+                                    <nil key="textColor"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                                <searchBar contentMode="redraw" searchBarStyle="minimal" placeholder="Search here" translatesAutoresizingMaskIntoConstraints="NO" id="MkK-TK-aQ5">
+                                    <rect key="frame" x="176.5" y="0.0" width="569.5" height="50"/>
+                                    <color key="barTintColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <textInputTraits key="textInputTraits"/>
+                                    <connections>
+                                        <outlet property="delegate" destination="-1" id="lEe-uH-dOU"/>
+                                    </connections>
+                                </searchBar>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="64O-UC-NMk">
+                                    <rect key="frame" x="756" y="0.0" width="50" height="50"/>
+                                    <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="50" id="J86-DT-sis"/>
+                                        <constraint firstAttribute="width" secondItem="64O-UC-NMk" secondAttribute="height" multiplier="1:1" id="cvo-eg-FIE"/>
+                                        <constraint firstAttribute="width" constant="50" id="vXL-iG-cHY"/>
+                                    </constraints>
+                                    <state key="normal" title="Button" image="globe_white"/>
+                                    <connections>
+                                        <action selector="mainButton:" destination="-1" eventType="touchUpInside" id="6fW-Qw-Wdh"/>
+                                    </connections>
+                                </button>
+                            </subviews>
+                        </stackView>
                     </subviews>
                     <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     <constraints>
-                        <constraint firstAttribute="trailing" secondItem="64O-UC-NMk" secondAttribute="trailing" constant="54" id="1uV-a8-Yxe"/>
-                        <constraint firstItem="MkK-TK-aQ5" firstAttribute="leading" secondItem="aqg-xz-PKV" secondAttribute="trailing" constant="10" id="26K-Jo-E4F"/>
-                        <constraint firstItem="aqg-xz-PKV" firstAttribute="leading" secondItem="DRt-92-FrI" secondAttribute="leading" constant="40" id="3yC-5q-gpZ"/>
-                        <constraint firstItem="aqg-xz-PKV" firstAttribute="top" secondItem="64O-UC-NMk" secondAttribute="top" id="GQT-Mt-OO3"/>
-                        <constraint firstItem="aqg-xz-PKV" firstAttribute="centerY" secondItem="MkK-TK-aQ5" secondAttribute="centerY" id="JP7-qK-pmp"/>
-                        <constraint firstItem="64O-UC-NMk" firstAttribute="leading" secondItem="MkK-TK-aQ5" secondAttribute="trailing" constant="20" id="NWc-c1-Ev7"/>
-                        <constraint firstItem="MkK-TK-aQ5" firstAttribute="height" secondItem="DRt-92-FrI" secondAttribute="height" id="PeP-1q-IZq"/>
-                        <constraint firstItem="aqg-xz-PKV" firstAttribute="top" secondItem="DRt-92-FrI" secondAttribute="top" id="Tr1-vO-QjZ"/>
-                        <constraint firstItem="aqg-xz-PKV" firstAttribute="height" secondItem="DRt-92-FrI" secondAttribute="height" id="UZp-bn-Nsy"/>
-                        <constraint firstAttribute="height" constant="70" id="crv-Ce-GoK"/>
+                        <constraint firstItem="Wkq-Bf-lnu" firstAttribute="centerX" secondItem="DRt-92-FrI" secondAttribute="centerX" id="1sY-qh-bym"/>
+                        <constraint firstItem="Wkq-Bf-lnu" firstAttribute="centerY" secondItem="DRt-92-FrI" secondAttribute="centerY" id="Lt5-S4-ckk"/>
+                        <constraint firstItem="Wkq-Bf-lnu" firstAttribute="width" secondItem="DRt-92-FrI" secondAttribute="width" multiplier="0.9" id="gbm-4Z-rwB"/>
                     </constraints>
                 </view>
                 <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="wrr-g8-rhA">
-                    <rect key="frame" x="0.0" y="70" width="896" height="344"/>
+                    <rect key="frame" x="0.0" y="66" width="896" height="348"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <collectionViewFlowLayout key="collectionViewLayout" scrollDirection="horizontal" minimumLineSpacing="10" minimumInteritemSpacing="20" id="wQC-F4-SlL">
                         <size key="itemSize" width="400" height="300"/>
@@ -77,14 +82,14 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstItem="DRt-92-FrI" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="6ns-8d-2cI"/>
-                <constraint firstItem="wrr-g8-rhA" firstAttribute="top" secondItem="DRt-92-FrI" secondAttribute="bottom" id="DSk-LT-L9P"/>
-                <constraint firstItem="wrr-g8-rhA" firstAttribute="trailing" secondItem="i5M-Pr-FkT" secondAttribute="trailing" id="Nuh-PE-yMD"/>
-                <constraint firstItem="wrr-g8-rhA" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" id="aNv-5U-WqG"/>
-                <constraint firstItem="wrr-g8-rhA" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" id="bMm-0x-wgx"/>
-                <constraint firstItem="DRt-92-FrI" firstAttribute="trailing" secondItem="fnl-2z-Ty3" secondAttribute="trailing" constant="44" id="hRy-fl-9nT"/>
-                <constraint firstItem="fnl-2z-Ty3" firstAttribute="leading" secondItem="DRt-92-FrI" secondAttribute="leading" constant="44" id="lyE-R4-36N"/>
-                <constraint firstAttribute="leading" secondItem="wrr-g8-rhA" secondAttribute="leading" id="o3K-PN-Lkh"/>
+                <constraint firstItem="wrr-g8-rhA" firstAttribute="top" secondItem="DRt-92-FrI" secondAttribute="bottom" id="8io-ar-vme"/>
+                <constraint firstAttribute="trailing" secondItem="DRt-92-FrI" secondAttribute="trailing" id="BUd-ri-CXR"/>
+                <constraint firstAttribute="bottom" secondItem="wrr-g8-rhA" secondAttribute="bottom" id="S3T-PH-8WH"/>
+                <constraint firstItem="DRt-92-FrI" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" id="gk3-ax-l2f"/>
+                <constraint firstItem="DRt-92-FrI" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.16" id="hr5-3s-2vh"/>
+                <constraint firstItem="DRt-92-FrI" firstAttribute="trailing" secondItem="wrr-g8-rhA" secondAttribute="trailing" id="mM9-ea-h8Z"/>
+                <constraint firstItem="DRt-92-FrI" firstAttribute="leading" secondItem="wrr-g8-rhA" secondAttribute="leading" id="pAI-H9-oP8"/>
+                <constraint firstItem="DRt-92-FrI" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="pdQ-Zl-sWh"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <point key="canvasLocation" x="140.625" y="153.62318840579712"/>

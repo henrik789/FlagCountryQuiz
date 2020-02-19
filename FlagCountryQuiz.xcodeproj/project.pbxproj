@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AF139EB623FD1A3100A320B5 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = AF139EB523FD1A3100A320B5 /* ToDo */; };
+		AF139EBA23FD1B6B00A320B5 /* QuizBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF139EB823FD1B6B00A320B5 /* QuizBViewController.swift */; };
+		AF139EBB23FD1B6B00A320B5 /* QuizBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF139EB923FD1B6B00A320B5 /* QuizBViewController.xib */; };
 		AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E1F223EDB794006E0104 /* AppDelegate.swift */; };
 		AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1F923EDB795006E0104 /* Assets.xcassets */; };
 		AF14E1FD23EDB795006E0104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1FB23EDB795006E0104 /* LaunchScreen.storyboard */; };
@@ -27,9 +30,13 @@
 		AF8DA2B923F30BB2007DCB09 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */; };
 		AFAE437E23FB2D91007CE4A0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE437D23FB2D91007CE4A0 /* MainNavigationController.swift */; };
 		AFAE438023FB319A007CE4A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFAE437F23FB319A007CE4A0 /* Main.storyboard */; };
+		AFE7EB9323FBFEA4008D0C0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE7EB9223FBFEA4008D0C0C /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AF139EB523FD1A3100A320B5 /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
+		AF139EB823FD1B6B00A320B5 /* QuizBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBViewController.swift; sourceTree = "<group>"; };
+		AF139EB923FD1B6B00A320B5 /* QuizBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizBViewController.xib; sourceTree = "<group>"; };
 		AF14E1EF23EDB794006E0104 /* FlagCountryQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagCountryQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF14E1F223EDB794006E0104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF14E1F923EDB795006E0104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -53,6 +60,7 @@
 		AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
 		AFAE437D23FB2D91007CE4A0 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		AFAE437F23FB319A007CE4A0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AFE7EB9223FBFEA4008D0C0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +74,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		AF139EB723FD1B4500A320B5 /* QuizB */ = {
+			isa = PBXGroup;
+			children = (
+				AF139EB823FD1B6B00A320B5 /* QuizBViewController.swift */,
+				AF139EB923FD1B6B00A320B5 /* QuizBViewController.xib */,
+			);
+			path = QuizB;
+			sourceTree = "<group>";
+		};
 		AF14E1E623EDB794006E0104 = {
 			isa = PBXGroup;
 			children = (
@@ -96,6 +113,8 @@
 				AF14E1FB23EDB795006E0104 /* LaunchScreen.storyboard */,
 				AF14E1FE23EDB795006E0104 /* Info.plist */,
 				AFAE437F23FB319A007CE4A0 /* Main.storyboard */,
+				AFE7EB9223FBFEA4008D0C0C /* ViewController.swift */,
+				AF139EB523FD1A3100A320B5 /* ToDo */,
 			);
 			path = FlagCountryQuiz;
 			sourceTree = "<group>";
@@ -103,6 +122,7 @@
 		AF14E20423EDB842006E0104 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AF139EB723FD1B4500A320B5 /* QuizB */,
 				AF14E20C23EDB978006E0104 /* Menu */,
 				AF14E20B23EDB95F006E0104 /* CountryList */,
 				AF14E20A23EDB950006E0104 /* FlagQuiz */,
@@ -247,6 +267,8 @@
 				AF14E21523EDBAFB006E0104 /* countriesDict.json in Resources */,
 				AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */,
 				AF14E21B23EDCD69006E0104 /* QuizViewController.xib in Resources */,
+				AF139EB623FD1A3100A320B5 /* ToDo in Resources */,
+				AF139EBB23FD1B6B00A320B5 /* QuizBViewController.xib in Resources */,
 				AFAE438023FB319A007CE4A0 /* Main.storyboard in Resources */,
 				AF8DA2B523F30877007DCB09 /* CountryListViewController.xib in Resources */,
 				AF14E20823EDB854006E0104 /* MainViewController.xib in Resources */,
@@ -263,9 +285,11 @@
 				AF14E20723EDB854006E0104 /* MainViewController.swift in Sources */,
 				AF14E21D23F17440006E0104 /* UIColor.swift in Sources */,
 				AF14E21A23EDCD69006E0104 /* QuizViewController.swift in Sources */,
+				AF139EBA23FD1B6B00A320B5 /* QuizBViewController.swift in Sources */,
 				AFAE437E23FB2D91007CE4A0 /* MainNavigationController.swift in Sources */,
 				AF14E22123F29D78006E0104 /* UIButton.swift in Sources */,
 				AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */,
+				AFE7EB9323FBFEA4008D0C0C /* ViewController.swift in Sources */,
 				AF14E21223EDBAC7006E0104 /* Country.swift in Sources */,
 				AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */,
 				AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */,
