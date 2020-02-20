@@ -20,12 +20,7 @@ class CountryListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         config()
-        //        for i in list {
-        //            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area) Language: \(i.language)")
-        //        }
-        
     }
     
     @IBAction func mainButton(_ sender: Any) {
@@ -41,10 +36,8 @@ class CountryListViewController: UIViewController {
         self.countryCV.register(UINib.init(nibName: CountryListCell.identifier, bundle: nil), forCellWithReuseIdentifier: CountryListCell.identifier)
         mainButton.layer.cornerRadius = mainButton.bounds.height / 2
         mainButton.backgroundColor = .myBlue
+        self.countryCV.keyboardDismissMode = .onDrag
     }
-    
-    
-    
 }
 
 extension CountryListViewController: UICollectionViewDelegate, UICollectionViewDataSource {
@@ -65,12 +58,11 @@ extension CountryListViewController: UICollectionViewDelegate, UICollectionViewD
         } else {
             country = list[indexPath.row]
         }
+        
         cell.config(countryname: country.name, capital: country.capital, region: country.region, subRegion: country.subregion, population: country.population, area: country.area, language: country.language, flagUrl: country.flagUrl, latitude: country.latitude, longitude: country.longitude, currrency: country.currency, currrencySymbol: country.currencySymbol)
         
         return cell
     }
-    
-    
 }
 
 extension CountryListViewController: UISearchBarDelegate {
@@ -78,7 +70,7 @@ extension CountryListViewController: UISearchBarDelegate {
         searchList = list.filter({ country -> Bool in
             if searchText.isEmpty { return true }
             searching = true
-            return country.name.lowercased().contains(searchText.lowercased())
+            return country.name.lowercased().hasPrefix(searchText.lowercased())
         })
         countryCV.reloadData()
         print(searchText)
@@ -87,6 +79,13 @@ extension CountryListViewController: UISearchBarDelegate {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searching = false
         searchBar.text = ""
+        countryCV.reloadData()
+    }
+    
+    func searchBarSearchButtonClicked(_ searchBar: UISearchBar)
+    {
+        searching = false
+        self.searchBar.endEditing(true)
     }
     
 }

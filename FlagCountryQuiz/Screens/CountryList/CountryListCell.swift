@@ -30,7 +30,7 @@ class CountryListCell: UICollectionViewCell{
     func config(countryname: String, capital: String, region: String, subRegion: String, population: String, area: String, language: String, flagUrl: String, latitude: String, longitude: String, currrency: String, currrencySymbol: String){
 
         mainView.backgroundColor = .myBeige
-        mainView.layer.cornerRadius = 16
+        mainView.layer.cornerRadius = mainView.bounds.height * 0.05
         
         countrynameLabel.text = "Country: \(countryname)"
         capitalLabel.text = "Capital: \(capital)"

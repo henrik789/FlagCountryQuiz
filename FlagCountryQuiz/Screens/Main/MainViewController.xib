@@ -102,7 +102,7 @@
                                 <constraint firstAttribute="width" constant="100" id="xcK-rb-Spc"/>
                             </constraints>
                             <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                            <state key="normal" title="Population">
+                            <state key="normal" title="QuizB">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>

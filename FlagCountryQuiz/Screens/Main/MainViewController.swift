@@ -15,6 +15,8 @@ protocol MainViewControllerDelegate: class {
 enum MainViewControllerAction {
     case quiz
     case countryList
+    case quizB
+    case settings
 }
 
 class MainViewController: UIViewController {
@@ -89,7 +91,7 @@ class MainViewController: UIViewController {
         delegate?.mainViewController(self, didSelect: .countryList)
     }
     @IBAction func buttonThree(_ sender: Any) {
-        animate()
+        delegate?.mainViewController(self, didSelect: .quizB)
     }
     
     func animate() {

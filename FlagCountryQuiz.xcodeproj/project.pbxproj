@@ -10,6 +10,8 @@
 		AF139EB623FD1A3100A320B5 /* ToDo in Resources */ = {isa = PBXBuildFile; fileRef = AF139EB523FD1A3100A320B5 /* ToDo */; };
 		AF139EBA23FD1B6B00A320B5 /* QuizBViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF139EB823FD1B6B00A320B5 /* QuizBViewController.swift */; };
 		AF139EBB23FD1B6B00A320B5 /* QuizBViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF139EB923FD1B6B00A320B5 /* QuizBViewController.xib */; };
+		AF139EBE23FE782000A320B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF139EBC23FE782000A320B5 /* SettingsViewController.swift */; };
+		AF139EBF23FE782000A320B5 /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF139EBD23FE782000A320B5 /* SettingsViewController.xib */; };
 		AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E1F223EDB794006E0104 /* AppDelegate.swift */; };
 		AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1F923EDB795006E0104 /* Assets.xcassets */; };
 		AF14E1FD23EDB795006E0104 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AF14E1FB23EDB795006E0104 /* LaunchScreen.storyboard */; };
@@ -37,6 +39,8 @@
 		AF139EB523FD1A3100A320B5 /* ToDo */ = {isa = PBXFileReference; lastKnownFileType = text; path = ToDo; sourceTree = "<group>"; };
 		AF139EB823FD1B6B00A320B5 /* QuizBViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizBViewController.swift; sourceTree = "<group>"; };
 		AF139EB923FD1B6B00A320B5 /* QuizBViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = QuizBViewController.xib; sourceTree = "<group>"; };
+		AF139EBC23FE782000A320B5 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		AF139EBD23FE782000A320B5 /* SettingsViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		AF14E1EF23EDB794006E0104 /* FlagCountryQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FlagCountryQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AF14E1F223EDB794006E0104 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AF14E1F923EDB795006E0104 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -123,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				AF139EB723FD1B4500A320B5 /* QuizB */,
-				AF14E20C23EDB978006E0104 /* Menu */,
+				AF14E20C23EDB978006E0104 /* Settings */,
 				AF14E20B23EDB95F006E0104 /* CountryList */,
 				AF14E20A23EDB950006E0104 /* FlagQuiz */,
 				AF14E20923EDB946006E0104 /* Main */,
@@ -160,11 +164,13 @@
 			path = CountryList;
 			sourceTree = "<group>";
 		};
-		AF14E20C23EDB978006E0104 /* Menu */ = {
+		AF14E20C23EDB978006E0104 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
+				AF139EBC23FE782000A320B5 /* SettingsViewController.swift */,
+				AF139EBD23FE782000A320B5 /* SettingsViewController.xib */,
 			);
-			path = Menu;
+			path = Settings;
 			sourceTree = "<group>";
 		};
 		AF14E20D23EDBA32006E0104 /* Helpers */ = {
@@ -268,6 +274,7 @@
 				AF14E1FA23EDB795006E0104 /* Assets.xcassets in Resources */,
 				AF14E21B23EDCD69006E0104 /* QuizViewController.xib in Resources */,
 				AF139EB623FD1A3100A320B5 /* ToDo in Resources */,
+				AF139EBF23FE782000A320B5 /* SettingsViewController.xib in Resources */,
 				AF139EBB23FD1B6B00A320B5 /* QuizBViewController.xib in Resources */,
 				AFAE438023FB319A007CE4A0 /* Main.storyboard in Resources */,
 				AF8DA2B523F30877007DCB09 /* CountryListViewController.xib in Resources */,
@@ -291,6 +298,7 @@
 				AF14E1F323EDB794006E0104 /* AppDelegate.swift in Sources */,
 				AFE7EB9323FBFEA4008D0C0C /* ViewController.swift in Sources */,
 				AF14E21223EDBAC7006E0104 /* Country.swift in Sources */,
+				AF139EBE23FE782000A320B5 /* SettingsViewController.swift in Sources */,
 				AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */,
 				AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */,
 				AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */,

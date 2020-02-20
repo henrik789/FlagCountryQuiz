@@ -42,11 +42,13 @@ extension MainNavigationController: MainViewControllerDelegate {
         let viewController: UIViewController
         switch action {
         case .quiz:
-//            let personViewModel = PersonViewModel(dataManager: serviceManager.dataManager)
             viewController = QuizViewController()
         case .countryList:
-//            let graphsViewModel = GraphsViewModel(dataManager: serviceManager.dataManager)
             viewController = CountryListViewController()
+        case .quizB:
+            viewController = QuizBViewController()
+        case .settings:
+            viewController = SettingsViewController()
             
         }
         
