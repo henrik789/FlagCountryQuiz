@@ -72,6 +72,7 @@ class QuizBViewController: UIViewController {
             countryList.remove(at: randomCountry)
         }
         flagCounter += 1
+        print(randomCountry,  "image: \(flag)")
     }
     
     func setupLabelTap() {

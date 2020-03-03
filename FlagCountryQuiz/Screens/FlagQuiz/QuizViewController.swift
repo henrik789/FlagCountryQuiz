@@ -14,6 +14,7 @@ class QuizViewController: UIViewController {
     var timer = Timer()
     var list = [Country]()
 
+    @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var countdownLabelHome: UILabel!
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
