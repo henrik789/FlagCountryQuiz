@@ -18,6 +18,7 @@
                 <outlet property="countryLabel" destination="hSt-f4-Yu0" id="sK7-0A-snk"/>
                 <outlet property="detailView" destination="BfE-xw-xbJ" id="1M9-7J-WOM"/>
                 <outlet property="logoLabel" destination="L66-8F-0z6" id="Jsu-sK-2iq"/>
+                <outlet property="myBtn" destination="eDl-85-Qii" id="gCc-Xl-QVj"/>
                 <outlet property="myView" destination="NEQ-ZQ-qRt" id="gLe-ix-iT5"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -30,7 +31,7 @@
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iV0-w0-HZf">
                     <rect key="frame" x="75" y="20" width="746" height="60"/>
                     <subviews>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag &amp; Country Quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="VexiloQuiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
                             <rect key="frame" x="0.0" y="1.5" width="685" height="57.5"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="42"/>
                             <nil key="highlightedColor"/>
@@ -41,14 +42,24 @@
                                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_white" translatesAutoresizingMaskIntoConstraints="NO" id="nGW-C7-l3m">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
                                 </imageView>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDl-85-Qii">
+                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    <connections>
+                                        <action selector="myBtn:" destination="-1" eventType="touchUpInside" id="QMA-T6-7Iu"/>
+                                    </connections>
+                                </button>
                             </subviews>
                             <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
                                 <constraint firstItem="nGW-C7-l3m" firstAttribute="height" secondItem="NEQ-ZQ-qRt" secondAttribute="height" id="4AL-PF-qi8"/>
                                 <constraint firstAttribute="height" constant="60" id="8r2-qi-xTE"/>
+                                <constraint firstItem="eDl-85-Qii" firstAttribute="width" secondItem="nGW-C7-l3m" secondAttribute="width" id="YPN-xd-nvv"/>
                                 <constraint firstAttribute="width" constant="60" id="ZpE-Og-uup"/>
+                                <constraint firstItem="eDl-85-Qii" firstAttribute="centerY" secondItem="nGW-C7-l3m" secondAttribute="centerY" id="akh-m2-zmd"/>
                                 <constraint firstItem="nGW-C7-l3m" firstAttribute="width" secondItem="NEQ-ZQ-qRt" secondAttribute="width" id="g8y-qT-crZ"/>
+                                <constraint firstItem="eDl-85-Qii" firstAttribute="centerX" secondItem="nGW-C7-l3m" secondAttribute="centerX" id="l7b-e6-hBU"/>
                                 <constraint firstItem="nGW-C7-l3m" firstAttribute="leading" secondItem="NEQ-ZQ-qRt" secondAttribute="leading" id="oXn-3f-HJI"/>
+                                <constraint firstItem="eDl-85-Qii" firstAttribute="height" secondItem="nGW-C7-l3m" secondAttribute="height" id="uXx-aO-ciR"/>
                                 <constraint firstItem="nGW-C7-l3m" firstAttribute="top" secondItem="NEQ-ZQ-qRt" secondAttribute="top" id="vkP-fE-Psx"/>
                             </constraints>
                         </view>
@@ -121,7 +132,7 @@
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
-                                <action selector="buttonThree:" destination="-1" eventType="touchUpInside" id="lWH-a2-WNH"/>
+                                <action selector="buttonFour:" destination="-1" eventType="touchUpInside" id="DUI-o2-Ald"/>
                             </connections>
                         </button>
                     </subviews>
@@ -129,7 +140,7 @@
                         <constraint firstAttribute="height" constant="100" id="utB-eA-jg1"/>
                     </constraints>
                 </stackView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vexillology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-f4-Yu0">
+                <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vexillology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-f4-Yu0">
                     <rect key="frame" x="75" y="290" width="79.5" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="YP6-MP-a2w"/>

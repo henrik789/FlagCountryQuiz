@@ -3,6 +3,7 @@ import UIKit
 
 class QuizBViewController: UIViewController {
     
+    @IBOutlet weak var bottomView: UIView!
     @IBOutlet weak var topView: UIView!
     @IBOutlet weak var mainButton: UIButton!
     @IBOutlet weak var timeLabel: UILabel!
@@ -10,34 +11,38 @@ class QuizBViewController: UIViewController {
     @IBOutlet weak var labelRight: UILabel!
     @IBOutlet weak var labelLeft: UILabel!
     @IBOutlet weak var flagImageView: UIImageView!
-    var fileViewOrigin: CGPoint!
     
     var getFlags = GetFlags()
     var countryList = [Country]()
     var right = false
     var points = 0
+    var flagCounter = 0
+    var countdownTimer: Timer!
+    var totalTime = 60
     
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
+        self.title = "Quiz B"
     }
     
     func config() {
-        addPanGesture(view: flagImageView)
-        fileViewOrigin = flagImageView.frame.origin
+        setupLabelTap()
         view.bringSubviewToFront(flagImageView)
-        view.backgroundColor = .myBeige
+        view.backgroundColor = .myYellow
+        bottomView.backgroundColor = .myBeige
         topView.backgroundColor = .myBeige
         mainButton.backgroundColor = .myGreen
         mainButton.layer.cornerRadius = mainButton.bounds.height / 2
-        labelRight.layer.cornerRadius = labelRight.bounds.height / 5
+        labelRight.layer.cornerRadius = labelRight.bounds.height / 9
         labelRight.layer.masksToBounds = true
-        labelLeft.layer.cornerRadius = labelLeft.bounds.height / 5
+        labelLeft.layer.cornerRadius = labelLeft.bounds.height / 9
         labelLeft.layer.masksToBounds = true
         labelRight.backgroundColor = .myEmerald
         labelLeft.backgroundColor = .myBlue
         countryList = getFlags.readJSONFromFile()
         startNewGame()
+        startTimer()
     }
     
     @IBAction func mainButton(_ sender: Any) {
@@ -55,92 +60,125 @@ class QuizBViewController: UIViewController {
         
         flagImageView.image = UIImage(named: "\(flag).png") ?? UIImage(named: "globe_white.png")
         if randomCountry % 2 == 0 {
-            labelRight.text = "Capital: \(countryList[randomCountry].capital)"
-            labelLeft.text = "Capital: \(countryList[fakeCountry].capital)"
+            labelRight.text = "Capital: \(countryList[randomCountry].capital) \n Population: \(formatNumber(bigNumber: countryList[randomCountry].population))"
+            labelLeft.text = "Capital: \(countryList[fakeCountry].capital) \n Population: \(formatNumber(bigNumber: countryList[fakeCountry].population))"
             right = true
             countryList.remove(at: randomCountry)
-            print(countryList[randomCountry].capital)
-            
             print(countryList.count, randomCountry)
         } else {
-            labelRight.text = "Capital: \(countryList[fakeCountry].capital)"
-            labelLeft.text = "Capital: \(countryList[randomCountry].capital)"
+            labelRight.text = "Capital: \(countryList[fakeCountry].capital) \n Population: \(formatNumber(bigNumber: countryList[fakeCountry].population))"
+            labelLeft.text = "Capital: \(countryList[randomCountry].capital) \n Population: \(formatNumber(bigNumber: countryList[randomCountry].population))"
             right = false
             countryList.remove(at: randomCountry)
-            print(countryList[randomCountry].capital)
-            
-            print(countryList.count, randomCountry)
         }
-
+        flagCounter += 1
+    }
+    
+    func setupLabelTap() {
         
+        let leftLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.leftlabelTapped(_:)))
+        self.labelLeft.isUserInteractionEnabled = true
+        self.labelLeft.addGestureRecognizer(leftLabelTap)
+        let rightLabelTap = UITapGestureRecognizer(target: self, action: #selector(self.rightabelTapped(_:)))
+        self.labelRight.isUserInteractionEnabled = true
+        self.labelRight.addGestureRecognizer(rightLabelTap)
     }
     
-    func evaluate() {
-        
-    }
-    
-    // Pan Handling **********************************************************************************************
-    func addPanGesture(view: UIView) {
-        let pan = UIPanGestureRecognizer(target: self, action: #selector(QuizBViewController.handlePan(sender:)))
-        view.addGestureRecognizer(pan)
-    }
-    
-    @objc func handlePan(sender: UIPanGestureRecognizer) {
-        
-        let fileView = sender.view!
-        switch sender.state {
-        case .began, .changed:
-            moveViewWithPan(view: fileView, sender: sender)
-        case .ended:
-            if fileView.frame.intersects(labelLeft.frame) && !right  {
-                deleteView(view: fileView)
-                points += 1
-                print("point left")
-                pointsLabel.text = "Points: \(points)"
-            } else if  fileView.frame.intersects(labelRight.frame) && right{
-                deleteView(view: fileView)
-                points += 1
-                pointsLabel.text = "Points: \(points)"
-                print("point right")
-            } else if fileView.frame.intersects(labelLeft.frame) && right || fileView.frame.intersects(labelRight.frame) && !right{
-                deleteView(view: fileView)
-                
-            } else {
-                returnViewToOrigin(view: fileView)
-            }
-        default:
-            break
-        }
-        
-    }
-    
-    func moveViewWithPan(view: UIView, sender: UIPanGestureRecognizer) {
-        let translation = sender.translation(in: view)
-        view.center = CGPoint(x: view.center.x + translation.x, y: view.center.y + translation.y)
-        sender.setTranslation(CGPoint.zero, in: view)
-    }
-    
-    func returnViewToOrigin(view: UIView) {
-        UIView.animate(withDuration: 0.3, animations: {
-            view.frame.origin = self.fileViewOrigin
-        })
-    }
-    
-    func deleteView(view: UIView) {
-        UIView.animate(withDuration: 0.3, animations: {
-            view.alpha = 0.1
-        })
-        UIView.animate(withDuration: 0.3) {
-            self.returnViewToOrigin(view: view)
-        }
-        UIView.animate(withDuration: 0.3) {
+    @objc func leftlabelTapped(_ sender: UITapGestureRecognizer) {
+        if !right {
+            points += 1
+            pointsLabel.text = "Points: \(points)"
+            winAnimation()
             self.startNewGame()
-            view.alpha = 1.0
+        } else {
+            pointsLabel.shake()
+            self.startNewGame()
         }
-
-        
+        print("left labelTapped")
+    }
+    
+    @objc func rightabelTapped(_ sender: UITapGestureRecognizer) {
+        if right {
+            points += 1
+            pointsLabel.text = "Points: \(points)"
+            winAnimation()
+            self.startNewGame()
+        } else {
+            pointsLabel.shake()
+            self.startNewGame()
+        }
+        print("right labelTapped")
     }
     
     
+    // Timer ************************************************************************************************
+    func startTimer() {
+        countdownTimer = Timer.scheduledTimer(timeInterval: 1, target: self, selector: #selector(updateTime), userInfo: nil, repeats: true)
+        countdownTimer.tolerance  = 0.3
+    }
+    
+    @objc func updateTime() {
+        timeLabel.text = "Time: \(timeFormatted(totalTime))"
+        
+        if totalTime != 0 {
+            totalTime -= 1
+        } else {
+            endTimer()
+        }
+    }
+    
+    func endTimer() {
+        countdownTimer.invalidate()
+        let alert = UIAlertController(title: "Finished", message: "You have completed all flags. You scored \(points) out of \(flagCounter).", preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+            @unknown default:
+                fatalError()
+            }}))
+        alert.addAction(UIAlertAction(title: "New Game", style: .default, handler: { action in
+            switch action.style{
+            case .default:
+                print("default")
+                self.config()
+            case .cancel:
+                print("cancel")
+                
+            case .destructive:
+                print("destructive")
+                
+            @unknown default:
+                fatalError()
+            }}))
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func timeFormatted(_ totalSeconds: Int) -> String {
+        let seconds: Int = totalSeconds % 60
+        let minutes: Int = (totalSeconds / 60) % 60
+        //     let hours: Int = totalSeconds / 3600
+        return String(format: "%02d:%02d", minutes, seconds)
+    }
+    @IBAction func startTimerPressed(_ sender: UIButton) {
+        startTimer()
+    }
+    
+
+    func winAnimation() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.pointsLabel.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        })
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseInOut, animations: {
+            self.pointsLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
+    }
     
 }

@@ -11,7 +11,6 @@ public var screenHeight: CGFloat {
 }
 
 class MainNavigationController: UINavigationController {
-//    let serviceManager = ServiceManager()
     
     init() {
         super.init(nibName: nil, bundle: nil)
@@ -45,16 +44,12 @@ extension MainNavigationController: MainViewControllerDelegate {
             viewController = QuizViewController()
         case .countryList:
             viewController = CountryListViewController()
-        case .quizB:
-            viewController = QuizBViewController()
         case .settings:
             viewController = SettingsViewController()
-            
+        case .quizB:
+            viewController = QuizBViewController()
         }
-        
-        
         pushViewController(viewController, animated: true)
-        
     }
     
 }

@@ -21,6 +21,7 @@ class CountryListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
+        self.title = "List"
     }
     
     @IBAction func mainButton(_ sender: Any) {

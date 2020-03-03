@@ -26,12 +26,14 @@
 		AF14E21D23F17440006E0104 /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21C23F17440006E0104 /* UIColor.swift */; };
 		AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21E23F299C6006E0104 /* GetFlags.swift */; };
 		AF14E22123F29D78006E0104 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E22023F29D78006E0104 /* UIButton.swift */; };
+		AF402B2523FF2DF90030EFFF /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF402B2423FF2DF90030EFFF /* UILabel.swift */; };
 		AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */; };
 		AF8DA2B523F30877007DCB09 /* CountryListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8DA2B323F30877007DCB09 /* CountryListViewController.xib */; };
 		AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA2B623F30BB2007DCB09 /* CountryListCell.swift */; };
 		AF8DA2B923F30BB2007DCB09 /* CountryListCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */; };
 		AFAE437E23FB2D91007CE4A0 /* MainNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFAE437D23FB2D91007CE4A0 /* MainNavigationController.swift */; };
 		AFAE438023FB319A007CE4A0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AFAE437F23FB319A007CE4A0 /* Main.storyboard */; };
+		AFE6827923FFC7EE00A77847 /* Formatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE6827823FFC7EE00A77847 /* Formatter.swift */; };
 		AFE7EB9323FBFEA4008D0C0C /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFE7EB9223FBFEA4008D0C0C /* ViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -58,12 +60,14 @@
 		AF14E21E23F299C6006E0104 /* GetFlags.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetFlags.swift; sourceTree = "<group>"; };
 		AF14E22023F29D78006E0104 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		AF1F693323F4A0C3005E6352 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
+		AF402B2423FF2DF90030EFFF /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
 		AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
 		AF8DA2B323F30877007DCB09 /* CountryListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListViewController.xib; sourceTree = "<group>"; };
 		AF8DA2B623F30BB2007DCB09 /* CountryListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListCell.swift; sourceTree = "<group>"; };
 		AF8DA2B723F30BB2007DCB09 /* CountryListCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CountryListCell.xib; sourceTree = "<group>"; };
 		AFAE437D23FB2D91007CE4A0 /* MainNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainNavigationController.swift; sourceTree = "<group>"; };
 		AFAE437F23FB319A007CE4A0 /* Main.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		AFE6827823FFC7EE00A77847 /* Formatter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Formatter.swift; sourceTree = "<group>"; };
 		AFE7EB9223FBFEA4008D0C0C /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -178,6 +182,8 @@
 			children = (
 				AF14E21C23F17440006E0104 /* UIColor.swift */,
 				AF14E22023F29D78006E0104 /* UIButton.swift */,
+				AF402B2423FF2DF90030EFFF /* UILabel.swift */,
+				AFE6827823FFC7EE00A77847 /* Formatter.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -299,9 +305,11 @@
 				AFE7EB9323FBFEA4008D0C0C /* ViewController.swift in Sources */,
 				AF14E21223EDBAC7006E0104 /* Country.swift in Sources */,
 				AF139EBE23FE782000A320B5 /* SettingsViewController.swift in Sources */,
+				AF402B2523FF2DF90030EFFF /* UILabel.swift in Sources */,
 				AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */,
 				AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */,
 				AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */,
+				AFE6827923FFC7EE00A77847 /* Formatter.swift in Sources */,
 				AF14E21023EDBAA5006E0104 /* SwiftyJSON.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

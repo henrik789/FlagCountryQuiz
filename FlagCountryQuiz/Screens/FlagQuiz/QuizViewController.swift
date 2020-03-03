@@ -13,10 +13,7 @@ class QuizViewController: UIViewController {
     var time = 0
     var timer = Timer()
     var list = [Country]()
-//    var mainVC = MainViewController()
-    
-//    @IBOutlet weak var globeView: UIView!
-//    @IBOutlet var startView: UIView!
+
     @IBOutlet weak var countdownLabelHome: UILabel!
     @IBOutlet weak var flagLabel: UILabel!
     @IBOutlet weak var pointsLabel: UILabel!
@@ -28,11 +25,7 @@ class QuizViewController: UIViewController {
     @IBAction func restartBtn(_ sender: Any) {
         startFresh()
     }
-//    @IBAction func backBtn(_ sender: Any) {
-//
-//
-//        startView.removeFromSuperview()
-//    }
+
     
     @IBAction func landOne(_ sender: Any) {
         let buttonOne = sender
@@ -61,23 +54,13 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var flagImage: UIImageView!
     
     @IBAction func mainBtn(_ sender: Any) {
-//        startView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: screenHeight)
-//        //        startView.layer.cornerRadius = screenHeight / 4
-//        startView.layer.masksToBounds = true
-//        view.addSubview(startView)
-//        self.present(self.mainVC, animated: true, completion: nil)
-//        mainVC.dismiss(animated: true) {
-//            print("working")
-//        }
         navigationController?.popViewController(animated: true)
-        view.backgroundColor = .myBlue
-        
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
+        self.title = "Quiz A"
         getFlags.buildArray()
         config()
         list = getFlags.readJSONFromFile()
@@ -157,6 +140,7 @@ class QuizViewController: UIViewController {
                 })  { _ in
                     self.points = self.points + 1
                     self.pointsLabel.text = "Points: \(self.points)"
+                    self.winAnimation()
                     self.newFlag((Any).self)
                     button.backgroundColor = .myWhite2
                     button.setTitleColor(.black, for: .normal)
@@ -207,6 +191,7 @@ class QuizViewController: UIViewController {
                         }
                     }
                 }
+                pointsLabel.shake()
             }
             flagCounter = flagCounter + 1
         }else {
@@ -264,6 +249,15 @@ class QuizViewController: UIViewController {
     @objc func update() {
         time += 1
         countdownLabelHome.text = "Time: " + String(time)
+    }
+    
+    func winAnimation() {
+        UIView.animate(withDuration: 0.2, delay: 0.0, options: .curveEaseInOut, animations: {
+            self.pointsLabel.transform = CGAffineTransform(scaleX: 1.3, y: 1.3)
+        })
+        UIView.animate(withDuration: 0.2, delay: 0.2, options: .curveEaseInOut, animations: {
+            self.pointsLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
+        })
     }
 
 }
