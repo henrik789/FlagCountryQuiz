@@ -11,9 +11,11 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SettingsViewController" customModule="FlagCountryQuiz" customModuleProvider="target">
             <connections>
+                <outlet property="flagSlider" destination="I25-Wa-BBw" id="438-Dx-2IQ"/>
                 <outlet property="headerView" destination="lrg-B8-yUo" id="eJL-pg-TWq"/>
                 <outlet property="mainView" destination="Smc-cf-WOM" id="QMB-Gz-w13"/>
                 <outlet property="settingsBtn" destination="VhN-Az-hGi" id="Kxz-9J-zaM"/>
+                <outlet property="timeSlider" destination="ccA-hw-2gh" id="7wI-l9-bnI"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
