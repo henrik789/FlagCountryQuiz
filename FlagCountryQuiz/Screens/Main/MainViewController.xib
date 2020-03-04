@@ -29,61 +29,52 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="1" translatesAutoresizingMaskIntoConstraints="NO" id="iV0-w0-HZf">
-                    <rect key="frame" x="75" y="20" width="746" height="60"/>
+                    <rect key="frame" x="67" y="20" width="762" height="60"/>
                     <subviews>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flag &amp; Country Quiz" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L66-8F-0z6">
-                            <rect key="frame" x="0.0" y="1.5" width="685" height="57.5"/>
+                            <rect key="frame" x="0.0" y="1.5" width="701" height="57.5"/>
                             <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="42"/>
                             <nil key="highlightedColor"/>
                         </label>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NEQ-ZQ-qRt">
-                            <rect key="frame" x="686" y="0.0" width="60" height="60"/>
+                            <rect key="frame" x="702" y="0.0" width="60" height="60"/>
                             <subviews>
-                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="globe_white" translatesAutoresizingMaskIntoConstraints="NO" id="nGW-C7-l3m">
+                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDl-85-Qii">
                                     <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
-                                </imageView>
-                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eDl-85-Qii">
-                                    <rect key="frame" x="0.0" y="0.0" width="60" height="60"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <state key="normal" image="globe_white_small"/>
                                     <connections>
                                         <action selector="myBtn:" destination="-1" eventType="touchUpInside" id="QMA-T6-7Iu"/>
                                     </connections>
                                 </button>
                             </subviews>
-                            <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstItem="nGW-C7-l3m" firstAttribute="height" secondItem="NEQ-ZQ-qRt" secondAttribute="height" id="4AL-PF-qi8"/>
                                 <constraint firstAttribute="height" constant="60" id="8r2-qi-xTE"/>
-                                <constraint firstItem="eDl-85-Qii" firstAttribute="width" secondItem="nGW-C7-l3m" secondAttribute="width" id="YPN-xd-nvv"/>
                                 <constraint firstAttribute="width" constant="60" id="ZpE-Og-uup"/>
-                                <constraint firstItem="eDl-85-Qii" firstAttribute="centerY" secondItem="nGW-C7-l3m" secondAttribute="centerY" id="akh-m2-zmd"/>
-                                <constraint firstItem="nGW-C7-l3m" firstAttribute="width" secondItem="NEQ-ZQ-qRt" secondAttribute="width" id="g8y-qT-crZ"/>
-                                <constraint firstItem="eDl-85-Qii" firstAttribute="centerX" secondItem="nGW-C7-l3m" secondAttribute="centerX" id="l7b-e6-hBU"/>
-                                <constraint firstItem="nGW-C7-l3m" firstAttribute="leading" secondItem="NEQ-ZQ-qRt" secondAttribute="leading" id="oXn-3f-HJI"/>
-                                <constraint firstItem="eDl-85-Qii" firstAttribute="height" secondItem="nGW-C7-l3m" secondAttribute="height" id="uXx-aO-ciR"/>
-                                <constraint firstItem="nGW-C7-l3m" firstAttribute="top" secondItem="NEQ-ZQ-qRt" secondAttribute="top" id="vkP-fE-Psx"/>
                             </constraints>
                         </view>
                     </subviews>
                 </stackView>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nTy-AQ-M4r">
-                    <rect key="frame" x="75" y="78.5" width="685" height="1"/>
-                    <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <rect key="frame" x="67" y="78.5" width="701" height="1"/>
+                    <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="1" id="bup-Ik-BZQ"/>
                     </constraints>
                 </view>
                 <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hKk-Ia-cz8">
-                    <rect key="frame" x="75" y="140" width="746" height="100"/>
+                    <rect key="frame" x="67" y="140" width="762" height="120"/>
                     <subviews>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M3w-Pf-iqV">
-                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                            <rect key="frame" x="0.0" y="0.0" width="120" height="120"/>
                             <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="Pfc-SN-Dbf"/>
-                                <constraint firstAttribute="width" constant="100" id="slh-hx-I8Y"/>
+                                <constraint firstAttribute="height" constant="120" id="Pfc-SN-Dbf"/>
+                                <constraint firstAttribute="width" constant="120" id="slh-hx-I8Y"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                            <state key="normal" title="FlagQuiz">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="First Quiz">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -91,13 +82,13 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DBi-b6-exa">
-                            <rect key="frame" x="215.5" y="0.0" width="100" height="100"/>
+                            <rect key="frame" x="214" y="0.0" width="120" height="120"/>
                             <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="FnT-Pl-cZA"/>
-                                <constraint firstAttribute="width" constant="100" id="frD-uw-od3"/>
+                                <constraint firstAttribute="height" constant="120" id="FnT-Pl-cZA"/>
+                                <constraint firstAttribute="width" constant="120" id="frD-uw-od3"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                             <state key="normal" title="Countries">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -106,14 +97,14 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PeC-Hh-BO9">
-                            <rect key="frame" x="430.5" y="0.0" width="100" height="100"/>
+                            <rect key="frame" x="428" y="0.0" width="120" height="120"/>
                             <color key="backgroundColor" red="0.95024377107620239" green="0.91168469190597534" blue="0.78716880083084106" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="w92-ZJ-Moc"/>
-                                <constraint firstAttribute="width" constant="100" id="xcK-rb-Spc"/>
+                                <constraint firstAttribute="height" constant="120" id="w92-ZJ-Moc"/>
+                                <constraint firstAttribute="width" constant="120" id="xcK-rb-Spc"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
-                            <state key="normal" title="A or B">
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
+                            <state key="normal" title="Second Quiz">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
                             <connections>
@@ -121,13 +112,13 @@
                             </connections>
                         </button>
                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gWU-hz-fdS">
-                            <rect key="frame" x="646" y="0.0" width="100" height="100"/>
+                            <rect key="frame" x="642" y="0.0" width="120" height="120"/>
                             <color key="backgroundColor" red="0.95024377110000002" green="0.91168469190000001" blue="0.78716880079999996" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             <constraints>
-                                <constraint firstAttribute="height" constant="100" id="0th-v0-6Wx"/>
-                                <constraint firstAttribute="width" constant="100" id="NWM-0k-FrE"/>
+                                <constraint firstAttribute="height" constant="120" id="0th-v0-6Wx"/>
+                                <constraint firstAttribute="width" constant="120" id="NWM-0k-FrE"/>
                             </constraints>
-                            <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
+                            <fontDescription key="fontDescription" name="AvenirNext-DemiBold" family="Avenir Next" pointSize="16"/>
                             <state key="normal" title="Settings">
                                 <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </state>
@@ -137,11 +128,11 @@
                         </button>
                     </subviews>
                     <constraints>
-                        <constraint firstAttribute="height" constant="100" id="utB-eA-jg1"/>
+                        <constraint firstAttribute="height" constant="120" id="utB-eA-jg1"/>
                     </constraints>
                 </stackView>
                 <label opaque="NO" userInteractionEnabled="NO" alpha="0.0" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vexillology" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSt-f4-Yu0">
-                    <rect key="frame" x="75" y="290" width="79.5" height="15"/>
+                    <rect key="frame" x="67" y="310" width="79.5" height="15"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="15" id="YP6-MP-a2w"/>
                     </constraints>
@@ -150,12 +141,12 @@
                     <nil key="highlightedColor"/>
                 </label>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BfE-xw-xbJ">
-                    <rect key="frame" x="75" y="305" width="746" height="75"/>
+                    <rect key="frame" x="67" y="325" width="762" height="75"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="75" id="R78-Qz-aAV"/>
                     </constraints>
                     <string key="text">A person who studies flags is a vexillologist, one who designs flags is a vexillographer, and the art of flag-designing is called vexillography. One who is a hobbyist or general admirer of flags is a vexillophile.  (Source: Wikipedia)</string>
-                    <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                    <color key="textColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     <fontDescription key="fontDescription" name="Courier" family="Courier" pointSize="12"/>
                     <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                 </textView>
@@ -172,7 +163,7 @@
                 <constraint firstItem="BfE-xw-xbJ" firstAttribute="leading" secondItem="iV0-w0-HZf" secondAttribute="leading" id="kI9-yC-O2D"/>
                 <constraint firstItem="iV0-w0-HZf" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="ojr-IU-JZu"/>
                 <constraint firstItem="hKk-Ia-cz8" firstAttribute="top" secondItem="iV0-w0-HZf" secondAttribute="bottom" constant="60" id="pGp-5f-axr"/>
-                <constraint firstItem="iV0-w0-HZf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" constant="-150" id="u6V-0m-IQE"/>
+                <constraint firstItem="iV0-w0-HZf" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.85" id="u6V-0m-IQE"/>
                 <constraint firstItem="hSt-f4-Yu0" firstAttribute="top" secondItem="hKk-Ia-cz8" secondAttribute="bottom" constant="50" id="wpH-dL-POK"/>
                 <constraint firstItem="nTy-AQ-M4r" firstAttribute="top" secondItem="iV0-w0-HZf" secondAttribute="bottom" constant="-1.5" id="wxA-nS-XAt"/>
                 <constraint firstItem="hSt-f4-Yu0" firstAttribute="leading" secondItem="iV0-w0-HZf" secondAttribute="leading" id="ytH-zF-9t3"/>
@@ -182,6 +173,6 @@
         </view>
     </objects>
     <resources>
-        <image name="globe_white" width="1500" height="1500"/>
+        <image name="globe_white_small" width="100" height="100"/>
     </resources>
 </document>

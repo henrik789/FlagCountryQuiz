@@ -45,8 +45,9 @@ class MainViewController: UIViewController {
 //        }
         
         view.backgroundColor = .myWhite
-        myView.backgroundColor = .black
-        myView.layer.cornerRadius = myView.bounds.height / 2
+        myBtn.layer.cornerRadius = myBtn.bounds.height / 2
+//        myView.backgroundColor = .black
+//        myView.layer.cornerRadius = myView.bounds.height / 2
         logoLabel.textColor = .black
         buttonOne.backgroundColor = .myYellow
         buttonTwo.backgroundColor = .myBlue
@@ -57,6 +58,7 @@ class MainViewController: UIViewController {
         buttonThree.mainStyle()
         buttonFour.mainStyle()
         animate()
+
 
         let navbar = navigationController?.navigationBar
         navbar?.isHidden = true

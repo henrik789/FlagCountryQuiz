@@ -43,6 +43,7 @@ class QuizBViewController: UIViewController {
         countryList = getFlags.readJSONFromFile()
         startNewGame()
         startTimer()
+        
     }
     
     @IBAction func mainButton(_ sender: Any) {

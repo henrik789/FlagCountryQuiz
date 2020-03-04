@@ -9,7 +9,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var mainView: UIView!
     @IBOutlet weak var flagSlider: UISlider!
     @IBOutlet weak var timeSlider: UISlider!
-    
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondView: UIView!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -20,14 +21,23 @@ class SettingsViewController: UIViewController {
     
     
     func config() {
-        flagSlider.tintColor = .myBlue
-        flagSlider.thumbTintColor = .myBlue
-        timeSlider.tintColor = .myEmerald
+        view.backgroundColor = .myWhite
+        headerView.backgroundColor = .myWhite
+        mainView.backgroundColor = .myWhite
         
-        headerView.backgroundColor = .myBeige
+        firstView.backgroundColor = .myGreen
+        firstView.layer.cornerRadius = firstView.bounds.height / 6
+        flagSlider.tintColor = .myYellow
+        flagSlider.thumbTintColor = .myYellow
+        
+        secondView.backgroundColor = .myBlue
+        secondView.layer.cornerRadius = secondView.bounds.height / 6
+        timeSlider.tintColor = .myRed
+        timeSlider.thumbTintColor = .myRed
+        
         settingsBtn.backgroundColor = .myRed
         settingsBtn.layer.cornerRadius = settingsBtn.bounds.height / 2
-        mainView.backgroundColor = .myBeige
+        
     }
     
     @IBAction func settingsBtn(_ sender: Any) {

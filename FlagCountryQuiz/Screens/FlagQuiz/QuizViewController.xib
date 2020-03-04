@@ -35,26 +35,26 @@
                         <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="4zL-Br-yIG">
                             <rect key="frame" x="45" y="8" width="806" height="50"/>
                             <subviews>
-                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FlagQuiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-Oa-rBf">
-                                    <rect key="frame" x="0.0" y="4.5" width="131.5" height="41"/>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="First Quiz" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5wE-Oa-rBf">
+                                    <rect key="frame" x="0.0" y="4.5" width="139" height="41"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Bold" family="Avenir Next" pointSize="30"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Countdown" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WcO-DG-moM">
-                                    <rect key="frame" x="242.5" y="14" width="86.5" height="22"/>
+                                    <rect key="frame" x="248" y="14" width="86.5" height="22"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Flags:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kdi-RM-9Pm">
-                                    <rect key="frame" x="440" y="15" width="45.5" height="20.5"/>
+                                    <rect key="frame" x="443.5" y="15" width="45.5" height="20.5"/>
                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                     <nil key="textColor"/>
                                     <nil key="highlightedColor"/>
                                 </label>
                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Points:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hPx-BA-TA8">
-                                    <rect key="frame" x="596" y="14" width="49" height="22"/>
+                                    <rect key="frame" x="598" y="14" width="49" height="22"/>
                                     <fontDescription key="fontDescription" name="AvenirNext-Medium" family="Avenir Next" pointSize="16"/>
                                     <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                     <nil key="highlightedColor"/>
@@ -65,7 +65,7 @@
                                         <constraint firstAttribute="width" constant="50" id="H4D-Xn-wQ6"/>
                                         <constraint firstAttribute="height" constant="50" id="wtE-94-4YE"/>
                                     </constraints>
-                                    <state key="normal" image="globe_white">
+                                    <state key="normal" image="globe_white_small">
                                         <color key="titleColor" cocoaTouchSystemColor="darkTextColor"/>
                                     </state>
                                     <connections>
@@ -76,6 +76,12 @@
                         </stackView>
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iel-TF-Rhn" userLabel="LineView">
                             <rect key="frame" x="45" y="55" width="721" height="1"/>
+                            <subviews>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-QI-SIC">
+                                    <rect key="frame" x="285" y="-1" width="150" height="2"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </progressView>
+                            </subviews>
                             <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             <constraints>
                                 <constraint firstAttribute="height" constant="1" id="Fh9-91-kCd"/>
@@ -92,16 +98,16 @@
                     </constraints>
                 </view>
                 <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="kkV-1f-Oij">
-                    <rect key="frame" x="45" y="71" width="806" height="73"/>
+                    <rect key="frame" x="45" y="71" width="806" height="79.5"/>
                     <subviews>
                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="JrI-J0-1rg">
-                            <rect key="frame" x="0.0" y="0.0" width="806" height="73"/>
+                            <rect key="frame" x="0.0" y="0.0" width="806" height="79.5"/>
                             <subviews>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="pkI-2I-RMN">
-                                    <rect key="frame" x="0.0" y="0.0" width="806" height="34"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="806" height="37.5"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M6Z-eK-jXo" userLabel="LandOne">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="37.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                             <state key="normal" title="Button">
@@ -112,7 +118,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OBZ-1A-Bxb" userLabel="LandTwo">
-                                            <rect key="frame" x="408" y="0.0" width="398" height="34"/>
+                                            <rect key="frame" x="408" y="0.0" width="398" height="37.5"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                             <state key="normal" title="Button">
@@ -125,10 +131,10 @@
                                     </subviews>
                                 </stackView>
                                 <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SIJ-0f-o88">
-                                    <rect key="frame" x="0.0" y="39" width="806" height="34"/>
+                                    <rect key="frame" x="0.0" y="42.5" width="806" height="37"/>
                                     <subviews>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G2u-rV-ZKE" userLabel="LandThree">
-                                            <rect key="frame" x="0.0" y="0.0" width="398" height="34"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="398" height="37"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                             <state key="normal" title="Button">
@@ -139,7 +145,7 @@
                                             </connections>
                                         </button>
                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b9D-P2-y5i" userLabel="Landfour">
-                                            <rect key="frame" x="408" y="0.0" width="398" height="34"/>
+                                            <rect key="frame" x="408" y="0.0" width="398" height="37"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                             <fontDescription key="fontDescription" name="AvenirNext-Regular" family="Avenir Next" pointSize="16"/>
                                             <state key="normal" title="Button">
@@ -167,14 +173,14 @@
                     </constraints>
                 </view>
                 <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ae" translatesAutoresizingMaskIntoConstraints="NO" id="ez1-hH-jA9">
-                    <rect key="frame" x="158" y="159" width="580" height="240"/>
+                    <rect key="frame" x="158" y="165.5" width="580" height="233.5"/>
                 </imageView>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
                 <constraint firstItem="gZy-5n-xgN" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="1dg-2S-osC"/>
                 <constraint firstItem="kkV-1f-Oij" firstAttribute="centerX" secondItem="fnl-2z-Ty3" secondAttribute="centerX" id="JS6-CM-qJZ"/>
-                <constraint firstItem="kkV-1f-Oij" firstAttribute="height" secondItem="gZy-5n-xgN" secondAttribute="height" multiplier="1.1" id="JaY-Ro-e4U"/>
+                <constraint firstItem="kkV-1f-Oij" firstAttribute="height" secondItem="gZy-5n-xgN" secondAttribute="height" multiplier="1.2" id="JaY-Ro-e4U"/>
                 <constraint firstItem="ez1-hH-jA9" firstAttribute="bottom" secondItem="i5M-Pr-FkT" secondAttribute="bottom" constant="-15" id="KtP-LM-5rA"/>
                 <constraint firstItem="gZy-5n-xgN" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="height" multiplier="0.16" id="Rka-Hz-i3g"/>
                 <constraint firstItem="gZy-5n-xgN" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Vcm-d4-tZn"/>
@@ -190,6 +196,6 @@
     </objects>
     <resources>
         <image name="ae" width="580" height="290"/>
-        <image name="globe_white" width="1500" height="1500"/>
+        <image name="globe_white_small" width="100" height="100"/>
     </resources>
 </document>

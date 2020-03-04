@@ -51,7 +51,7 @@
                                         <constraint firstAttribute="width" secondItem="64O-UC-NMk" secondAttribute="height" multiplier="1:1" id="cvo-eg-FIE"/>
                                         <constraint firstAttribute="width" constant="50" id="vXL-iG-cHY"/>
                                     </constraints>
-                                    <state key="normal" title="Button" image="globe_white"/>
+                                    <state key="normal" title="Button" image="globe_white_small"/>
                                     <connections>
                                         <action selector="mainButton:" destination="-1" eventType="touchUpInside" id="6fW-Qw-Wdh"/>
                                     </connections>
@@ -97,6 +97,6 @@
         </view>
     </objects>
     <resources>
-        <image name="globe_white" width="1500" height="1500"/>
+        <image name="globe_white_small" width="100" height="100"/>
     </resources>
 </document>
