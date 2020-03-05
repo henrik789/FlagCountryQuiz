@@ -20,9 +20,16 @@ class QuizBViewController: UIViewController {
     var countdownTimer: Timer!
     var totalTime = 60
     
+
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         config()
+        guard let user = StorageController.shared.fetchUser() else { return }
+
+        timeLabel.text = String(user.timeCount)
+        totalTime = user.timeCount
+//        print(user.timeCount, totalTime, user.email)
         self.title = "Quiz B"
     }
     
@@ -156,7 +163,7 @@ class QuizBViewController: UIViewController {
             switch action.style{
             case .default:
                 print("default")
-                self.config()
+                self.viewDidLoad()
             case .cancel:
                 print("cancel")
                 

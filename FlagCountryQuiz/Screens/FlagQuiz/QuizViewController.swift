@@ -7,11 +7,12 @@ class QuizViewController: UIViewController {
     var landFullname = String()
     var getFlags = GetFlags()
     var points: Int = 0
-    var flagCounter = 1
+    var flagCounter = 0
+    var flagLimit = 1
     var randomNumber = 0
     var answer = String()
     var time = 0
-    var timer = Timer()
+//    var timer = Timer()
     var list = [Country]()
 
     @IBOutlet weak var headerView: UIView!
@@ -26,6 +27,9 @@ class QuizViewController: UIViewController {
     @IBAction func restartBtn(_ sender: Any) {
         startFresh()
     }
+    
+    /* Warning: Attempt to present <UIAlertController: 0x10183de00> on <FlagCountryQuiz.QuizBViewController: 0x100b19ca0> whose view is not in the window hierarchy!
+    */
 
     
     @IBAction func landOne(_ sender: Any) {
@@ -45,12 +49,12 @@ class QuizViewController: UIViewController {
         evaluate(button: buttonFour as! UIButton)
     }
     @IBAction func newFlag(_ sender: Any) {
-        
+        print(flagCounter, points)
         givenLand = getFlags.buildFlagArray()
+        flagCounter += 1
         flagImage.image = UIImage(named: givenLand + ".png")
-        print(givenLand + ".png")
         setCountryName(land: givenLand)
-        flagLabel.text = "Flags: \(flagCounter) / \(getFlags.totalFlags.count)"
+        flagLabel.text = "Flags: \(flagCounter) / \(flagLimit)"
     }
     @IBOutlet weak var flagImage: UIImageView!
     
@@ -58,29 +62,31 @@ class QuizViewController: UIViewController {
         navigationController?.popViewController(animated: true)
     }
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        self.title = "Quiz A"
         getFlags.buildArray()
         config()
-        list = getFlags.readJSONFromFile()
-        for i in list {
-            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area)")
-        }
+//        list = getFlags.readJSONFromFile()
+//        for i in list {
+//            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area)")
+//        }
     }
     
     
     func config() {
+        guard let user = StorageController.shared.fetchUser() else { return }
+        flagLimit = user.flagCount
         view.backgroundColor = .myBeige
         newFlag((Any).self)
+        flagLabel.text = "Flags: \(flagCounter)/\(flagLimit)"
         landOne.commonStyle()
         landTwo.commonStyle()
         landThre.commonStyle()
         landFour.commonStyle()
         mainBtn.backgroundColor = .myYellow
         mainBtn.layer.cornerRadius = mainBtn.bounds.height / 2
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }
     
@@ -132,7 +138,7 @@ class QuizViewController: UIViewController {
     
     
     func evaluate(button: UIButton) {
-        if flagCounter <= getFlags.totalFlags.count {
+        if flagCounter <= flagLimit {
             if button.currentTitle == answer {
                 
                 UIView.transition(with: button, duration: 0.3, options: .curveEaseOut, animations: {
@@ -142,11 +148,12 @@ class QuizViewController: UIViewController {
                     self.points = self.points + 1
                     self.pointsLabel.text = "Points: \(self.points)"
                     self.winAnimation()
+                    if self.flagCounter != self.flagLimit {
                     self.newFlag((Any).self)
+                    }
                     button.backgroundColor = .myWhite2
                     button.setTitleColor(.black, for: .normal)
                 }
-                
             }else {
                 UIView.transition(with: button, duration: 0.3, options: .curveEaseOut, animations: {
                     button.backgroundColor = .redOne
@@ -155,7 +162,7 @@ class QuizViewController: UIViewController {
                     button.backgroundColor = .myWhite2
                     button.setTitleColor(.black, for: .normal)
                     if self.randomNumber == 1 {
-                        UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
+                        UIView.transition(with: button, duration: 0.8, options: .curveEaseOut, animations: {
                             self.landOne.backgroundColor = .greenOne
                             self.landOne.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
@@ -164,7 +171,7 @@ class QuizViewController: UIViewController {
                             self.landOne.setTitleColor(.black, for: .normal)
                         }
                     } else if self.randomNumber == 2 {
-                        UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
+                        UIView.transition(with: button, duration: 0.8, options: .curveEaseOut, animations: {
                             self.landTwo.backgroundColor = .greenOne
                             self.landTwo.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
@@ -173,7 +180,7 @@ class QuizViewController: UIViewController {
                             self.landTwo.setTitleColor(.black, for: .normal)
                         }
                     }else if self.randomNumber == 3 {
-                        UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
+                        UIView.transition(with: button, duration: 0.8, options: .curveEaseOut, animations: {
                             self.landThre.backgroundColor = .greenOne
                             self.landThre.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
@@ -182,7 +189,7 @@ class QuizViewController: UIViewController {
                             self.landThre.setTitleColor(.black, for: .normal)
                         }
                     } else if self.randomNumber == 4 {
-                        UIView.transition(with: button, duration: 1.0, options: .curveEaseOut, animations: {
+                        UIView.transition(with: button, duration: 0.8, options: .curveEaseOut, animations: {
                             self.landFour.backgroundColor = .greenOne
                             self.landFour.setTitleColor(.myWhite2, for: .normal)
                         })  { _ in
@@ -194,16 +201,16 @@ class QuizViewController: UIViewController {
                 }
                 pointsLabel.shake()
             }
-            flagCounter = flagCounter + 1
-        }else {
+        }
+        if flagCounter == flagLimit {
             startOver()
         }
     }
     
     func startOver() {
-        pointsLabel.text = "All flags done"
-        
-        let alert = UIAlertController(title: "Finished", message: "You have completed all flags. You scored \(points) out of \(flagCounter).", preferredStyle: .alert)
+//        pointsLabel.text = "Points: \(points)/\(flagLimit)"
+//        timer.invalidate()
+        let alert = UIAlertController(title: "Finished", message: "You have completed all flags. You scored \(points + 1) out of \(flagCounter).", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
@@ -222,7 +229,7 @@ class QuizViewController: UIViewController {
             switch action.style{
             case .default:
                 print("default")
-                self.startFresh()
+                self.viewDidLoad()
             case .cancel:
                 print("cancel")
                 
@@ -240,11 +247,11 @@ class QuizViewController: UIViewController {
         print("startfresh")
         points = 0
         pointsLabel.text = "Points: \(points)"
-        flagCounter = 0
-        flagLabel.text = "Flags: \(flagCounter) / \(getFlags.totalFlags.count)"
+        flagCounter = 1
+        flagLabel.text = "Flags: \(flagCounter)/\(flagLimit)"
         getFlags.buildArray()
         config()
-        countdownLabelHome.text = "Time: \(time)"
+//        countdownLabelHome.text = "Time: \(time)"
     }
     
     @objc func update() {
