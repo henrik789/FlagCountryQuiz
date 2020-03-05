@@ -34,9 +34,9 @@ class QuizBViewController: UIViewController {
         topView.backgroundColor = .myBeige
         mainButton.backgroundColor = .myGreen
         mainButton.layer.cornerRadius = mainButton.bounds.height / 2
-        labelRight.layer.cornerRadius = labelRight.bounds.height / 9
+        labelRight.layer.cornerRadius = labelRight.bounds.height / 10
         labelRight.layer.masksToBounds = true
-        labelLeft.layer.cornerRadius = labelLeft.bounds.height / 9
+        labelLeft.layer.cornerRadius = labelLeft.bounds.height / 10
         labelLeft.layer.masksToBounds = true
         labelRight.backgroundColor = .myEmerald
         labelLeft.backgroundColor = .myBlue
@@ -54,7 +54,13 @@ class QuizBViewController: UIViewController {
     func startNewGame() {
         
         let randomCountry = Int.random(in: 0..<countryList.count)
-        let fakeCountry = Int.random(in: 0..<countryList.count)
+
+        var fakeCountry = Int.random(in: 0..<countryList.count)
+        while fakeCountry == randomCountry {
+            fakeCountry = Int.random(in: 0..<countryList.count)
+            print("Error! game engine", randomCountry, fakeCountry)
+        }
+        
         var flag = countryList[randomCountry].flagUrl
         
         flag = flag.replacingOccurrences(of: ".", with: "")

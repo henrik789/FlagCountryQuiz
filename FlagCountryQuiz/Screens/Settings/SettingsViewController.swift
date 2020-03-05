@@ -25,14 +25,14 @@ class SettingsViewController: UIViewController {
         headerView.backgroundColor = .myWhite
         mainView.backgroundColor = .myWhite
         
-        firstView.backgroundColor = .myGreen
+        firstView.backgroundColor = UIColor(named: "greyish")
         firstView.layer.cornerRadius = firstView.bounds.height / 6
         flagSlider.tintColor = .myYellow
-        flagSlider.thumbTintColor = .myYellow
+        flagSlider.thumbTintColor = .myBlue
         
-        secondView.backgroundColor = .myBlue
+        secondView.backgroundColor = UIColor(named: "PaleWhite")
         secondView.layer.cornerRadius = secondView.bounds.height / 6
-        timeSlider.tintColor = .myRed
+        timeSlider.tintColor = .myGreen
         timeSlider.thumbTintColor = .myRed
         
         settingsBtn.backgroundColor = .myRed
