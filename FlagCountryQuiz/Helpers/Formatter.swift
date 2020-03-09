@@ -12,6 +12,13 @@ func formatNumber(bigNumber: String) -> String {
     let bigNumber = Int(bigNumber)
     let numberFormatter = NumberFormatter()
     numberFormatter.numberStyle = .decimal
-    guard let formattedNumber = numberFormatter.string(from: NSNumber(value: bigNumber!)) else { return ""}
+    guard let formattedNumber = numberFormatter.string(from: NSNumber(value: bigNumber ?? 1)) else { return ""}
+    return formattedNumber
+}
+
+func formatArea(bigNumber: Float) -> String {
+    let numberFormatter = NumberFormatter()
+    numberFormatter.numberStyle = .decimal
+    guard let formattedNumber = numberFormatter.string(from: NSNumber(value: bigNumber)) else { return ""}
     return formattedNumber
 }

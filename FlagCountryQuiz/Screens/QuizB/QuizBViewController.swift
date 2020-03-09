@@ -15,7 +15,7 @@ class QuizBViewController: UIViewController {
     var getFlags = GetFlags()
     var countryList = [Country]()
     var right = false
-    var points = 0
+    var points: Int = 0
     var flagCounter = 0
     var countdownTimer: Timer!
     var totalTime = 60
@@ -48,6 +48,8 @@ class QuizBViewController: UIViewController {
         labelRight.backgroundColor = .myEmerald
         labelLeft.backgroundColor = .myBlue
         countryList = getFlags.readJSONFromFile()
+        points = 0
+        pointsLabel.text = "Points: \(points)"
         startNewGame()
         startTimer()
         
@@ -149,7 +151,7 @@ class QuizBViewController: UIViewController {
             switch action.style{
             case .default:
                 print("default")
-                
+                self.navigationController?.popViewController(animated: true)
             case .cancel:
                 print("cancel")
                 

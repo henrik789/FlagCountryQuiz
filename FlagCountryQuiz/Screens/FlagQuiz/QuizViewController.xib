@@ -22,6 +22,7 @@
                 <outlet property="landTwo" destination="OBZ-1A-Bxb" id="XP9-3B-qgk"/>
                 <outlet property="mainBtn" destination="PAc-c9-AWe" id="eGe-hj-8RF"/>
                 <outlet property="pointsLabel" destination="hPx-BA-TA8" id="as7-0f-MqT"/>
+                <outlet property="progressView" destination="PZb-QI-SIC" id="3Ln-wN-Ir7"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
         </placeholder>
@@ -78,14 +79,15 @@
                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iel-TF-Rhn" userLabel="LineView">
                             <rect key="frame" x="45" y="55" width="721" height="1"/>
                             <subviews>
-                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" progress="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-QI-SIC">
-                                    <rect key="frame" x="285" y="-1" width="150" height="2"/>
-                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="PZb-QI-SIC">
+                                    <rect key="frame" x="0.0" y="-0.5" width="721" height="2"/>
                                 </progressView>
                             </subviews>
-                            <color key="backgroundColor" name="Hague"/>
                             <constraints>
+                                <constraint firstItem="PZb-QI-SIC" firstAttribute="centerX" secondItem="iel-TF-Rhn" secondAttribute="centerX" id="2eK-6h-5sx"/>
+                                <constraint firstItem="PZb-QI-SIC" firstAttribute="width" secondItem="iel-TF-Rhn" secondAttribute="width" id="41o-2L-SV4"/>
                                 <constraint firstAttribute="height" constant="1" id="Fh9-91-kCd"/>
+                                <constraint firstItem="PZb-QI-SIC" firstAttribute="centerY" secondItem="iel-TF-Rhn" secondAttribute="centerY" id="KBv-r5-BCU"/>
                             </constraints>
                         </view>
                     </subviews>

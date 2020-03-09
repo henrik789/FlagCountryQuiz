@@ -27,6 +27,7 @@
 		AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E21E23F299C6006E0104 /* GetFlags.swift */; };
 		AF14E22123F29D78006E0104 /* UIButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF14E22023F29D78006E0104 /* UIButton.swift */; };
 		AF402B2523FF2DF90030EFFF /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF402B2423FF2DF90030EFFF /* UILabel.swift */; };
+		AF502E11241237900079947E /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF502E10241237900079947E /* UIView.swift */; };
 		AF79465224115DBD0069D5C0 /* StorageController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79465124115DBD0069D5C0 /* StorageController.swift */; };
 		AF79465424115DD20069D5C0 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF79465324115DD10069D5C0 /* User.swift */; };
 		AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */; };
@@ -63,6 +64,7 @@
 		AF14E22023F29D78006E0104 /* UIButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButton.swift; sourceTree = "<group>"; };
 		AF1F693323F4A0C3005E6352 /* WebKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = WebKit.framework; path = System/Library/Frameworks/WebKit.framework; sourceTree = SDKROOT; };
 		AF402B2423FF2DF90030EFFF /* UILabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		AF502E10241237900079947E /* UIView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
 		AF79465124115DBD0069D5C0 /* StorageController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StorageController.swift; sourceTree = "<group>"; };
 		AF79465324115DD10069D5C0 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		AF8DA2B223F30877007DCB09 /* CountryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountryListViewController.swift; sourceTree = "<group>"; };
@@ -188,6 +190,7 @@
 				AF14E22023F29D78006E0104 /* UIButton.swift */,
 				AF402B2423FF2DF90030EFFF /* UILabel.swift */,
 				AFE6827823FFC7EE00A77847 /* Formatter.swift */,
+				AF502E10241237900079947E /* UIView.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -314,6 +317,7 @@
 				AF139EBE23FE782000A320B5 /* SettingsViewController.swift in Sources */,
 				AF402B2523FF2DF90030EFFF /* UILabel.swift in Sources */,
 				AF8DA2B823F30BB2007DCB09 /* CountryListCell.swift in Sources */,
+				AF502E11241237900079947E /* UIView.swift in Sources */,
 				AF14E21F23F299C6006E0104 /* GetFlags.swift in Sources */,
 				AF79465424115DD20069D5C0 /* User.swift in Sources */,
 				AF8DA2B423F30877007DCB09 /* CountryListViewController.swift in Sources */,

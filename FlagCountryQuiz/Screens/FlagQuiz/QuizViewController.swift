@@ -2,19 +2,19 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-
+    
     var givenLand = String()
     var landFullname = String()
     var getFlags = GetFlags()
     var points: Int = 0
     var flagCounter = 0
-    var flagLimit = 1
+    var flagLimit = 20
     var randomNumber = 0
     var answer = String()
     var time = 0
-//    var timer = Timer()
+    var progress = Progress(totalUnitCount: 10)
     var list = [Country]()
-
+    
     @IBOutlet weak var headerView: UIView!
     @IBOutlet weak var countdownLabelHome: UILabel!
     @IBOutlet weak var flagLabel: UILabel!
@@ -24,13 +24,14 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var landThre: UIButton!
     @IBOutlet weak var landFour: UIButton!
     @IBOutlet weak var mainBtn: UIButton!
+    @IBOutlet weak var progressView: UIProgressView!
     @IBAction func restartBtn(_ sender: Any) {
         startFresh()
     }
     
     /* Warning: Attempt to present <UIAlertController: 0x10183de00> on <FlagCountryQuiz.QuizBViewController: 0x100b19ca0> whose view is not in the window hierarchy!
-    */
-
+     */
+    
     
     @IBAction func landOne(_ sender: Any) {
         let buttonOne = sender
@@ -67,10 +68,10 @@ class QuizViewController: UIViewController {
         super.viewDidLoad()
         getFlags.buildArray()
         config()
-//        list = getFlags.readJSONFromFile()
-//        for i in list {
-//            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area)")
-//        }
+        //        list = getFlags.readJSONFromFile()
+        //        for i in list {
+        //            print("Capital: \(i.capital) Land: \(i.name) Area: \(i.area)")
+        //        }
     }
     
     
@@ -79,6 +80,9 @@ class QuizViewController: UIViewController {
         flagLimit = user.flagCount
         view.backgroundColor = .myBeige
         newFlag((Any).self)
+        progress = Progress(totalUnitCount: Int64(flagLimit))
+        progressView.progressTintColor = .myYellow
+        progressView.trackTintColor = UIColor(named: "Hague")
         flagLabel.text = "Flags: \(flagCounter)/\(flagLimit)"
         landOne.commonStyle()
         landTwo.commonStyle()
@@ -86,7 +90,8 @@ class QuizViewController: UIViewController {
         landFour.commonStyle()
         mainBtn.backgroundColor = .myYellow
         mainBtn.layer.cornerRadius = mainBtn.bounds.height / 2
-//        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
+        
+        //        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(update), userInfo: nil, repeats: true)
         
     }
     
@@ -149,7 +154,7 @@ class QuizViewController: UIViewController {
                     self.pointsLabel.text = "Points: \(self.points)"
                     self.winAnimation()
                     if self.flagCounter != self.flagLimit {
-                    self.newFlag((Any).self)
+                        self.newFlag((Any).self)
                     }
                     button.backgroundColor = .myWhite2
                     button.setTitleColor(.black, for: .normal)
@@ -202,20 +207,27 @@ class QuizViewController: UIViewController {
                 pointsLabel.shake()
             }
         }
+        incrementProgress()
         if flagCounter == flagLimit {
             startOver()
         }
     }
     
+    func incrementProgress() {
+        progress.completedUnitCount += 1
+        let progressFloat = Float(progress.fractionCompleted)
+        progressView.setProgress(progressFloat, animated: true)
+    }
+    
     func startOver() {
-//        pointsLabel.text = "Points: \(points)/\(flagLimit)"
-//        timer.invalidate()
+        //        pointsLabel.text = "Points: \(points)/\(flagLimit)"
+        //        timer.invalidate()
         let alert = UIAlertController(title: "Finished", message: "You have completed all flags. You scored \(points + 1) out of \(flagCounter).", preferredStyle: .alert)
         alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { action in
             switch action.style{
             case .default:
                 print("default")
-                
+                self.navigationController?.popViewController(animated: true)
             case .cancel:
                 print("cancel")
                 
@@ -229,7 +241,7 @@ class QuizViewController: UIViewController {
             switch action.style{
             case .default:
                 print("default")
-                self.viewDidLoad()
+                self.startFresh()
             case .cancel:
                 print("cancel")
                 
@@ -244,14 +256,14 @@ class QuizViewController: UIViewController {
     }
     
     func startFresh() {
-        print("startfresh")
+        progressView.progress = 0
         points = 0
         pointsLabel.text = "Points: \(points)"
-        flagCounter = 1
+        flagCounter = 0
         flagLabel.text = "Flags: \(flagCounter)/\(flagLimit)"
         getFlags.buildArray()
         config()
-//        countdownLabelHome.text = "Time: \(time)"
+        //        countdownLabelHome.text = "Time: \(time)"
     }
     
     @objc func update() {
@@ -267,5 +279,5 @@ class QuizViewController: UIViewController {
             self.pointsLabel.transform = CGAffineTransform(scaleX: 1, y: 1)
         })
     }
-
+    
 }

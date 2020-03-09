@@ -2,18 +2,18 @@ import UIKit
 
 
 struct Country {
-    var name : String = ""
-    var capital : String = ""
-    var region : String = ""
-    var subregion : String = ""
-    var population : String = ""
-    var area : String = ""
-    var language : String = ""
-    var flagUrl : String = ""
-    var latitude : String = ""
-    var longitude : String = ""
-    var currency : String = ""
-    var currencySymbol : String = ""
+    var name : String
+    var capital : String
+    var region : String
+    var subregion : String
+    var population : String
+    var area : Float
+    var language : String
+    var flagUrl : String
+    var latitude : String
+    var longitude : String
+    var currency : String
+    var currencySymbol : String
     
     
 //    func fullName () -> String {
@@ -35,7 +35,7 @@ extension Country {
         let region = json["region"].stringValue
         let subregion = json["subregion"].stringValue
         let population = json["population"].stringValue
-        let area = json["area"].stringValue
+        let area = json["area"].floatValue
         let language = json["languages"][0]["name"].stringValue
         let flagUrl = json["topLevelDomain"][0].stringValue
         let latitude = json["latlng"][0].stringValue

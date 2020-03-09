@@ -61,12 +61,11 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction func timeSlider(_ sender: Any) {
-        let step: Float = 30
+        let step: Float = 10
         let roundedValue = round(timeSlider.value / step) * step
         timeNumber = Int(roundedValue)
         timeLabel.text = String(timeNumber)
         save()
-        print(timeNumber)
     }
     
     func save() {
