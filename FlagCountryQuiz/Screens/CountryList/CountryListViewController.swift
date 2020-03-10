@@ -37,8 +37,7 @@ class CountryListViewController: UIViewController {
         let aSelector : Selector = #selector(CountryListViewController.removeViewFromSuperView)
         let tapGesture = UITapGestureRecognizer(target:self, action: aSelector)
         flagView.addGestureRecognizer(tapGesture)
-        
-        flagView.translatesAutoresizingMaskIntoConstraints = false
+        flagView.translatesAutoresizingMaskIntoConstraints = true
         searchBar.delegate = self
         countryCV.backgroundColor = .myWhite2
         list = getFlags.readJSONFromFile()
@@ -54,9 +53,7 @@ class CountryListViewController: UIViewController {
         view.addSubview(flagView)
         let flagFormat = flag.replacingOccurrences(of: ".", with: "")
         bigFlag.image = UIImage(named: "\(flagFormat).png")
-
         flagView.isUserInteractionEnabled = true
-        
         animate()
     }
     

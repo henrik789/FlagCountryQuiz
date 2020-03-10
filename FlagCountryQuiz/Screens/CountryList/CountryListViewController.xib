@@ -128,7 +128,6 @@
                 <constraint firstItem="Vvp-Dx-Fol" firstAttribute="width" secondItem="G3P-Ha-Q5j" secondAttribute="width" id="cuK-EA-x22"/>
                 <constraint firstItem="Vvp-Dx-Fol" firstAttribute="height" secondItem="G3P-Ha-Q5j" secondAttribute="height" id="sYV-Wd-VCS"/>
             </constraints>
-            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <viewLayoutGuide key="safeArea" id="5WE-Ai-r0P"/>
             <point key="canvasLocation" x="139.95535714285714" y="-752.17391304347836"/>
         </view>
